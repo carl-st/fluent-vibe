@@ -2,8 +2,45 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 0
+    "total_sessions": 1
   },
-  "sessions": [],
-  "milestones": []
+  "sessions": [
+    {
+      "session_id": "session-001",
+      "date": "2026-11-08",
+      "duration_minutes": 8,
+      "skills_practiced": [
+        "vocabulary"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 10,
+      "accuracy": 1.0,
+      "score_breakdown": {
+        "vocabulary": 1.0
+      },
+      "topics_covered": [
+        "greetings",
+        "travel essentials",
+        "hangeul reading"
+      ],
+      "breakthroughs": [
+        "First 10 Korean words learned",
+        "Polite speech level (합니다/예요) grasped"
+      ],
+      "focus_next_session": [
+        "Hangeul vowel discrimination ㅏ/ㅓ, ㅛ/ㅖ",
+        "More travel phrases: ordering food"
+      ],
+      "notes": "Intro session after /fluent-setup. 10 travel vocabulary items, all answered correctly on final attempt. A1 start confirmed.",
+      "achievements_earned": [],
+      "streak_day": 0
+    }
+  ],
+  "milestones": [
+    {
+      "date": "2026-11-08",
+      "milestone": "Completed first lesson: 10 travel words in Korean",
+      "session_id": "session-001"
+    }
+  ]
 }

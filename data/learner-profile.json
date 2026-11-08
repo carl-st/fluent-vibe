@@ -2,7 +2,11 @@
   "learner": {
     "name": "Karol",
     "native_language": "Polish",
-    "other_languages": ["English", "German", "Spanish"],
+    "other_languages": [
+      "English",
+      "German",
+      "Spanish"
+    ],
     "target_language": "Korean",
     "current_level": "A1",
     "target_level": "A2",
@@ -14,8 +18,8 @@
   "profile_created": "2026-11-08",
   "last_updated": "2026-11-08",
   "current_streak_days": 0,
-  "total_sessions": 0,
-  "total_study_minutes": 0,
+  "total_sessions": 1,
+  "total_study_minutes": 8,
   "skills": {
     "writing": {
       "current_level": 0,
@@ -30,10 +34,10 @@
       "total_practice_time": 0
     },
     "vocabulary": {
-      "current_level": 0,
-      "confidence": 0,
-      "last_practiced": null,
-      "total_practice_time": 0
+      "current_level": 1,
+      "confidence": 30,
+      "last_practiced": "2026-11-08",
+      "total_practice_time": 8
     },
     "reading": {
       "current_level": 0,
@@ -59,11 +63,21 @@
       "name": "Getting Started",
       "earned_date": "2026-11-08",
       "description": "Created your learning profile"
+    },
+    {
+      "id": "session_session-001_0_completed_first_lesson_10_tra",
+      "name": "Completed first lesson: 10 travel words in Korean",
+      "earned_date": "2026-11-08",
+      "description": "Completed first lesson: 10 travel words in Korean"
     }
   ],
   "preferences": {
     "difficulty_preference": "adaptive",
-    "exercise_types_preferred": ["conversation", "writing", "quick_drills"],
+    "exercise_types_preferred": [
+      "conversation",
+      "writing",
+      "quick_drills"
+    ],
     "feedback_style": "immediate_with_explanation",
     "gamification_enabled": false,
     "use_emojis": true

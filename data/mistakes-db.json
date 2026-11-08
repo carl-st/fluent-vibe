@@ -1,8 +1,78 @@
 {
   "metadata": {
     "last_updated": "2026-11-08",
-    "total_patterns_tracked": 0,
+    "total_patterns_tracked": 3,
     "language": "Korean"
   },
-  "error_patterns": {}
+  "error_patterns": {
+    "hangeul_vowel_a_vs_eo": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-08",
+      "last_occurred": "2026-11-08",
+      "next_review": "2026-11-09",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "감섬니더 / 검서헙니다 / 어니요",
+          "correct": "감사합니다 / 아니요 (ㅏ not ㅓ)",
+          "context": "confusing ㅏ (ah) with ㅓ (uh) in hangeul",
+          "date": "2026-11-08"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_vowel_ye_vs_yeo_vs_e": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-08",
+      "last_occurred": "2026-11-08",
+      "next_review": "2026-11-09",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "아니여 / 얼마에요",
+          "correct": "아니요 / 얼마예요 (ㅛ/ㅖ not ㅕ/ㅔ)",
+          "context": "confusing ㅛ, ㅖ with ㅕ, ㅔ",
+          "date": "2026-11-08"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_consonant_g_vs_n": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-08",
+      "last_occurred": "2026-11-08",
+      "next_review": "2026-11-09",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "저니요",
+          "correct": "저기요 (ㄱ not ㄴ)",
+          "context": "confusing ㄱ and ㄴ initials",
+          "date": "2026-11-08"
+        }
+      ],
+      "notes": ""
+    }
+  }
 }
