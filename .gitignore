@@ -1,10 +1,8 @@
-# Personal learning data - DO NOT commit
-/data/*.json
+# Learning progress IS committed on purpose — every session ends with a
+# commit (see .claude/skills/fluent-db-updater/SKILL.md) so progress can be
+# continued from another device. Only transient artifacts stay out of git:
 /data/*.json.backup-*
-/results/*.md
-# Except the README files which explain the structure
-!/data/README.md
-!/results/README.md
+/results/*.tmp*
 
 # Personal writing/practice files
 myfile.txt

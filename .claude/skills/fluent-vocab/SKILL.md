@@ -21,6 +21,14 @@ Skip this skill if no vocabulary items are due and no new words are queued — o
 
 ### 1. Load vocabulary data
 
+First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
+
+```bash
+git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+```
+
+Then load the vocabulary data:
+
 ```bash
 python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
 ```

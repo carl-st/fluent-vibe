@@ -43,7 +43,13 @@ Skip this skill if a profile already exists and the learner did not ask to chang
 
 ### 1. Check for existing profile
 
-Resolve the data directory first, then probe for `learner-profile.json`:
+First, pull the latest progress (another device may have committed a profile or sessions already):
+
+```bash
+git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+```
+
+Then resolve the data directory and probe for `learner-profile.json`:
 
 ```bash
 DATA_DIR="$(python3 -c "
@@ -176,6 +182,17 @@ Start from the templates in `data-examples/`. Resolve the target directory via `
 
 Use the Write tool for each. Do not call `update-db.py` — that script is for session updates, not bootstrapping.
 
+Then commit the fresh baseline so progress syncs across devices from day one (clone mode — skip silently if the data directory is not inside a git working tree):
+
+```bash
+REPO="$(git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" rev-parse --show-toplevel 2>/dev/null || true)"
+if [ -n "$REPO" ]; then
+  git -C "$REPO" add data/ || true
+  git -C "$REPO" commit -m "fluent: initial learner profile ({name}, {target_language})" || true
+  git -C "$REPO" push || echo "Committed locally, but push failed (offline or no remote) — push later with: git push"
+fi
+```
+
 ### 6. Optional first lesson
 
 ```markdown
@@ -248,3 +265,4 @@ Learner: "reset my progress, I want to start over"
 - **Always seed all 6 files** — every other skill assumes they exist.
 - **Back up before reset.** Hooks may not fire here; back up manually to `.backups/pre-reset-<timestamp>/`.
 - **Don't invent data.** Start every file empty — progress, mistakes, mastery all start at zero. The system builds up from real sessions.
+- **Commit the baseline (clone mode).** After seeding the 6 files, commit and push — otherwise the first session on another device finds no profile.

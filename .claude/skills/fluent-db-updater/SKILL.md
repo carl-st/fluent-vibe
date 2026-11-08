@@ -1,6 +1,6 @@
 ---
 name: fluent-db-updater
-description: Atomically update all 6 Fluent learner databases (learner-profile, progress, mistakes, mastery, spaced-repetition, session-log) at session end by calling .claude/hooks/update-db.py with a single JSON payload. Use at the end of every practice session — fluent-writing, fluent-vocab, fluent-speaking, fluent-reading, fluent-review, fluent-learn — to persist the session's errors, review results, new vocabulary, and session metadata.
+description: Atomically update all 6 Fluent learner databases (learner-profile, progress, mistakes, mastery, spaced-repetition, session-log) at session end by calling .claude/hooks/update-db.py with a single JSON payload, then commit and push the result so progress continues on another device. Use at the end of every practice session — fluent-writing, fluent-vocab, fluent-speaking, fluent-reading, fluent-review, fluent-learn — to persist the session's errors, review results, new vocabulary, and session metadata.
 ---
 
 # DB Updater
@@ -68,6 +68,24 @@ python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.p
 
 Returns all 6 databases plus computed fields (`due_reviews_count`, `next_session_id`, `streak_active`, `days_since_last_session`).
 
+### 5. Commit and push (cross-device sync)
+
+Once `update-db.py` exits 0 **and** the session report is saved to `/results/`, commit the progress so the learner can continue on another device. Clone mode only — if the data directory is NOT inside a git working tree (plugin install, data in `~/.claude/fluent-data`), skip this step silently.
+
+```bash
+REPO="$(git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" rev-parse --show-toplevel 2>/dev/null || true)"
+if [ -n "$REPO" ]; then
+  git -C "$REPO" add data/ results/ || true
+  git -C "$REPO" commit -m "fluent: ${session_id} progress" || true
+  git -C "$REPO" push || echo "Committed locally, but push failed (offline or no remote) — push later with: git push"
+fi
+```
+
+- **One commit per session**, named with the same `session_id` as the payload.
+- Commit both `data/` and `results/` — the session report is part of the progress record. `.backups/` stays git-ignored.
+- A failed `push` is not a session failure. Tell the learner in one line and move on; the next session's `pull` will surface the unsynced commit.
+- If commit fails for another reason (merge conflict, dirty worktree), do not block the session end — fall back to the automatic `.backups/` snapshots and let the learner resolve the repo state manually.
+
 ## Examples
 
 ### Example 1 — /fluent-review session with 5 items
@@ -134,6 +152,7 @@ EOF
 ## Critical Rules
 
 - **Call once per session, at the end.** The script rebuilds the review queue each run — partial updates risk inconsistency.
+- **Commit and push after every successful update (clone mode).** Not optional at session end — the learner's other devices depend on it.
 - **Never hand-edit `spaced-repetition.review_queue`.** It's regenerated from scratch on every run.
 - **Same `session_id` replaces.** Sending the same ID twice overwrites the first call. Useful for corrections, dangerous if unintentional.
 - **Backups are automatic.** Written to `.backups/pre-update-<session_id>/` before any change. Check there to roll back.

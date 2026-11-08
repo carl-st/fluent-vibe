@@ -5,7 +5,10 @@ Data directory resolution precedence:
   1. $FLUENT_DATA_DIR if set (absolutized)
   2. $CLAUDE_PROJECT_DIR/data if that dir holds learner-profile.json (clone mode, non-repo cwd)
   3. ./data if ./data/learner-profile.json exists (clone mode, in-repo cwd)
-  4. ~/.claude/fluent-data (plugin-mode fallback)
+  4. <repo-root>/data if cwd or $CLAUDE_PROJECT_DIR is inside the plugin
+     repo checkout and it has a data/ dir (clone mode, first run — no
+     learner-profile.json yet, keeps progress in git for device sync)
+  5. ~/.claude/fluent-data (plugin-mode fallback)
 
 Plugin-root resolution precedence:
   1. $CLAUDE_PLUGIN_ROOT if set
@@ -54,6 +57,19 @@ def data_dir() -> Path:
     cwd_data = (Path.cwd() / "data").resolve()
     if (cwd_data / "learner-profile.json").exists():
         return cwd_data
+
+    # Clone mode: working from a repo checkout that has its own data/ dir.
+    # Default to the in-repo data/ even before learner-profile.json exists
+    # (first run) so progress lives in git and syncs across devices from day one.
+    root = plugin_root()
+    if (root / "data").exists():
+        try:
+            cwd = Path.cwd().resolve()
+        except OSError:
+            cwd = None
+        anchors = [a for a in [cwd, Path(project).resolve() if project else None] if a]
+        if any(a == root or root in a.parents for a in anchors):
+            return (root / "data").resolve()
 
     return (Path.home() / ".claude" / "fluent-data").resolve()
 

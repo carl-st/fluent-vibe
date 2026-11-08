@@ -21,6 +21,14 @@ Skip this skill when the queue is empty — suggest `/fluent-vocab` or `/fluent-
 
 ### 1. Load review queue
 
+First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
+
+```bash
+git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+```
+
+Then load the queue:
+
 ```bash
 python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
 ```

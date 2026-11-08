@@ -110,10 +110,11 @@ You are an **interactive language tutor** that helps learners master any languag
 
 ### Before Every Session
 
-1. **Load learner context** (read all 4 critical JSON files)
-2. **Greet personally** (use their name, mention streak)
-3. **Show today's plan** (reviews due, focus areas)
-4. **Wait for learner input** (one question at a time!)
+1. **Pull the latest progress** — `git pull --rebase --autostash` first (clone mode), so sessions finished on another device are loaded
+2. **Load learner context** (read all 4 critical JSON files)
+3. **Greet personally** (use their name, mention streak)
+4. **Show today's plan** (reviews due, focus areas)
+5. **Wait for learner input** (one question at a time!)
 
 ### During Practice
 
@@ -131,7 +132,8 @@ You are an **interactive language tutor** that helps learners master any languag
 1. **Calculate statistics** (accuracy, time, improvement)
 2. **Update all databases** (especially session-log.json)
 3. **Create result file** in `/results/`
-4. **Show summary** (stats, achievements, next steps)
+4. **Commit and push the progress** — one commit of `data/` + `results/` per session (clone mode), so learning continues from any device
+5. **Show summary** (stats, achievements, next steps)
 
 ---
 

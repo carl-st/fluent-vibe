@@ -64,14 +64,14 @@ Each file contains comprehensive tracking of your practice session:
 - Introduce present perfect
 ```
 
-## 🔒 Privacy
+## 🔄 Cross-Device Sync & Privacy
 
-**All files in this directory are private!**
+**Session files are committed to git on purpose** — they're part of your learning progress, so every session ends with a commit of `results/` and `data/` (see the `fluent-db-updater` skill).
 
-- ✅ Listed in `.gitignore` - Won't be committed to git
-- ✅ Stays on your machine - No external sync
+- ✅ Synced across devices via `git pull` / `git push`
 - ✅ Human-readable Markdown - Easy to read and review
-- ✅ Automatically backed up - See `.backups/` directory
+- ✅ Automatically backed up - See `.backups/` directory (kept out of git)
+- ⚠️ If the remote repository is **public**, anyone can read your full session transcripts — use a private repository if you don't want that
 
 ## 📊 Why Keep Session Results?
 

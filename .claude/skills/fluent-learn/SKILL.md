@@ -21,6 +21,14 @@ Skip this skill the very first time a learner runs the system — route to `/flu
 
 ### 1. Load learner context
 
+First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
+
+```bash
+git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+```
+
+Then load the databases:
+
 ```bash
 python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
 ```

@@ -271,7 +271,7 @@ These skills don't change what the learner-facing commands do — they let Claud
 
 **📋 Want to see the structure?** Check `/data-examples/` for template files showing the complete schema.
 
-**🔒 Privacy:** All data stays on your machine. Automatically excluded from git via `.gitignore`.
+**🔄 Cross-device:** Progress is committed to git at the end of every session, so you can continue learning from any device that clones this repo. ⚠️ If your fork is public, your learning data is public too — use a private repository.
 
 ### Intelligence Layer
 
@@ -346,11 +346,11 @@ The system automatically adjusts:
 
 ### Data Privacy & Security
 
-- ✅ **All data stays local** on your machine
+- ✅ **Cross-device sync** — every session ends with a git commit (+ push) of `data/` and `results/`
 - ✅ **No external API calls** (except Claude Code itself)
-- ✅ **Automatic .gitignore** prevents committing personal data
 - ✅ **Automatic backups** to `.backups/` directory
 - ✅ **No tracking, no analytics, no telemetry**
+- ⚠️ **Learning data is committed to the repo** — keep the repository private if you don't want your name, goals, and session transcripts visible
 
 ### Hooks System (Automated Data Management)
 

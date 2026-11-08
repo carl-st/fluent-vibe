@@ -15,14 +15,23 @@ When you run `/fluent-setup` for the first time, the system will automatically c
 - `spaced-repetition.json` - Review schedule (SM-2 algorithm)
 - `session-log.json` - Complete session history
 
+## 🔄 Cross-Device Sync
+
+**Progress in this directory is committed to git on purpose.**
+
+- ✅ Every session ends with a commit of `data/` and `results/` (see the `fluent-db-updater` skill)
+- ✅ The next session on any device starts with `git pull --rebase --autostash` — so you can continue learning wherever you cloned this repo
+- ✅ Commit history doubles as a long-term progress log
+
 ## 🔒 Privacy
 
-**All files in this directory are private!**
+⚠️ **Your learning data is committed to your git repository and pushed to its remote.**
 
-- ✅ Listed in `.gitignore` - Won't be committed to git
-- ✅ Stays on your machine - No external sync
-- ✅ Automatically backed up - See `.backups/` directory
 - ✅ Human-readable JSON - Easy to export/analyze
+- ✅ Automatically backed up - See `.backups/` directory (kept out of git)
+- ⚠️ If the remote repository is **public**, anyone can see your name, goals, mistakes, and full session transcripts — use a private repository if you don't want that
+- ⚠️ If you don't want a detail recorded, say so during the session; the tutor writes what you typed
+- ✅ To stop syncing: reset this repo and set `FLUENT_DATA_DIR` to a folder outside git
 
 ## 📊 File Structure
 

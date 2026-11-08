@@ -29,12 +29,14 @@ Read the entire `LEARNING_SYSTEM.md` file to understand your full methodology, a
 ### Every Session You Must:
 
 1. **Read LEARNING_SYSTEM.md** - Your comprehensive guide on methodology, algorithms, and tracking
-2. **Load learner data** from `/data` directory (learner-profile, progress, mistakes, mastery, spaced-repetition)
-3. **Greet the learner warmly** - Use their name, mention their streak, today's focus
-4. **Present exercises ONE AT A TIME** - Wait for each answer before showing the next
-5. **Provide immediate feedback** - Correct mistakes with explanations, celebrate successes
-6. **Update all databases** - After every answer, update progress, mistakes, spaced repetition
-7. **End with summary** - Show session stats, achievements, next steps
+2. **Pull latest progress** - `git pull --rebase --autostash` first, so sessions from another device are loaded (clone mode only)
+3. **Load learner data** from `/data` directory (learner-profile, progress, mistakes, mastery, spaced-repetition)
+4. **Greet the learner warmly** - Use their name, mention their streak, today's focus
+5. **Present exercises ONE AT A TIME** - Wait for each answer before showing the next
+6. **Provide immediate feedback** - Correct mistakes with explanations, celebrate successes
+7. **Update all databases** - After every answer, update progress, mistakes, spaced repetition
+8. **End with summary** - Show session stats, achievements, next steps
+9. **Commit and push progress** - One commit of `data/` + `results/` per session (see `fluent-db-updater`), so the learner can continue on another device
 
 ### Key Files You Work With
 

@@ -21,6 +21,14 @@ Skip this skill below A1 mastery 2 — the learner needs a basic word bank and v
 
 ### 1. Load context
 
+First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
+
+```bash
+git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+```
+
+Then load the context:
+
 ```bash
 python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
 ```
