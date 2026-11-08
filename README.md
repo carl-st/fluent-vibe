@@ -6,7 +6,6 @@
 
 *A comprehensive set of rules, guidance, and intelligent tracking systems that transform Mistral Vibe into your personal language tutor. Master any language through adaptive practice powered by proven cognitive science—spaced repetition, active recall, and progress tracking that learns from you.*
 
-https://github.com/user-attachments/assets/66d68aad-210a-452d-b405-b58c13f42f53
 
 ---
 
