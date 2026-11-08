@@ -1,7 +1,7 @@
 ---
 name: fluent-review
 description: Run today's spaced-repetition review queue — items scheduled by SM-2 that need reinforcement before the learner forgets them. Triggered only when the learner types /fluent-review. Pulls due items from spaced-repetition.review_queue.today, generates a targeted exercise for each, evaluates the response, updates SM-2 parameters, and reshelves items into the correct future queue.
-allowed-tools: Read, Write, Bash
+allowed-tools: read_file write_file bash
 disable-model-invocation: true
 ---
 
@@ -24,13 +24,13 @@ Skip this skill when the queue is empty — suggest `/fluent-vocab` or `/fluent-
 First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
 
 ```bash
-git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+git pull --rebase --autostash 2>/dev/null || true
 ```
 
 Then load the queue:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 Read `spaced-repetition.review_queue.today` and `daily_limits.review_items_per_day`. Sort items by `priority` (critical → high → medium → low). Cap at the daily limit (usually 20).

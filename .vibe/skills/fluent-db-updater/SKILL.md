@@ -1,6 +1,6 @@
 ---
 name: fluent-db-updater
-description: Atomically update all 6 Fluent learner databases (learner-profile, progress, mistakes, mastery, spaced-repetition, session-log) at session end by calling .claude/hooks/update-db.py with a single JSON payload, then commit and push the result so progress continues on another device. Use at the end of every practice session — fluent-writing, fluent-vocab, fluent-speaking, fluent-reading, fluent-review, fluent-learn — to persist the session's errors, review results, new vocabulary, and session metadata.
+description: Atomically update all 6 Fluent learner databases (learner-profile, progress, mistakes, mastery, spaced-repetition, session-log) at session end by calling hooks/update-db.py with a single JSON payload, then commit and push the result so progress continues on another device. Use at the end of every practice session — fluent-writing, fluent-vocab, fluent-speaking, fluent-reading, fluent-review, fluent-learn — to persist the session's errors, review results, new vocabulary, and session metadata.
 ---
 
 # DB Updater
@@ -27,7 +27,7 @@ Skip this skill for read-only operations (use the `fluent-progress` skill or `re
 Run from the repo root:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/update-db.py" <<'EOF'
+python3 "hooks/update-db.py" <<'EOF'
 { ...payload... }
 EOF
 ```
@@ -44,7 +44,7 @@ Exit codes: `0` success, `1` validation error, `2` I/O error.
 **Optional fields** — omit to skip. Full canonical example (copy-paste this and fill in):
 
 ```
-${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/references/db-updater-payload.example.json
+.vibe/skills/fluent-db-updater/payload.example.json
 ```
 
 Key blocks the example covers: `skill_scores`, `errors[]`, `new_vocabulary[]`, `review_results[]`, `topics_covered`, `breakthroughs`, `focus_next_session`, `session_notes`, `achievements_earned`, `milestones`.
@@ -63,17 +63,17 @@ Key blocks the example covers: `skill_scores`, `errors[]`, `new_vocabulary[]`, `
 Always call `read-db.py` at session start to get current state + `next_session_id`. Don't read each JSON file separately:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 Returns all 6 databases plus computed fields (`due_reviews_count`, `next_session_id`, `streak_active`, `days_since_last_session`).
 
 ### 5. Commit and push (cross-device sync)
 
-Once `update-db.py` exits 0 **and** the session report is saved to `/results/`, commit the progress so the learner can continue on another device. Clone mode only — if the data directory is NOT inside a git working tree (plugin install, data in `~/.claude/fluent-data`), skip this step silently.
+Once `update-db.py` exits 0 **and** the session report is saved to `/results/`, commit the progress so the learner can continue on another device. Clone mode only — if the data directory is NOT inside a git working tree (plugin install, data in `~/.vibe/fluent-data`), skip this step silently.
 
 ```bash
-REPO="$(git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" rev-parse --show-toplevel 2>/dev/null || true)"
+REPO="$(git rev-parse --show-toplevel 2>/dev/null || true)"
 if [ -n "$REPO" ]; then
   git -C "$REPO" add data/ results/ || true
   git -C "$REPO" commit -m "fluent: ${session_id} progress" || true
@@ -91,7 +91,7 @@ fi
 ### Example 1 — /fluent-review session with 5 items
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/update-db.py" <<'EOF'
+python3 "hooks/update-db.py" <<'EOF'
 {
   "session_id": "session-012",
   "date": "2026-04-24",
@@ -127,7 +127,7 @@ EOF
 ### Example 2 — /fluent-vocab session with a new word
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/update-db.py" <<'EOF'
+python3 "hooks/update-db.py" <<'EOF'
 {
   "session_id": "session-013",
   "date": "2026-04-25",

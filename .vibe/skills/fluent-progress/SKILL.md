@@ -1,7 +1,7 @@
 ---
 name: fluent-progress
 description: Show the learner's language learning progress, statistics, mastery levels, streak, and achievements. Use when the learner asks "how am I doing", "show my progress", "stats", "dashboard", "what's my streak", "how many words have I learned", or invokes /fluent-progress. Read-only — safe to auto-invoke.
-allowed-tools: Read, Bash
+allowed-tools: read_file bash
 ---
 
 # Progress Dashboard
@@ -28,12 +28,12 @@ Skip this skill when the learner is mid-practice — the ongoing session skill a
 Prefer the helper script over manual Read calls:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 This returns a single JSON with all 6 databases + computed fields (`due_reviews_count`, `next_session_id`, `streak_active`, `days_since_last_session`).
 
-If the helper is unavailable, fall back to reading each file directly. Resolve the data directory via `fluent_paths.data_dir()` first — do NOT hardcode `data/` (plugin installs store data under `~/.claude/fluent-data/`):
+If the helper is unavailable, fall back to reading each file directly. Resolve the data directory via `fluent_paths.data_dir()` first — do NOT hardcode `data/` (plugin installs store data under `~/.vibe/fluent-data/`):
 
 - `<data_dir>/learner-profile.json`
 - `<data_dir>/progress-db.json`
@@ -221,4 +221,4 @@ Learner: "how am I doing on Dutch?" → auto-invoke this skill, render the full 
 
 ## Why This Skill Auto-Invokes
 
-Unlike session commands, this is a pure read. A false-positive (Claude opens the dashboard when the learner asked something else) costs only a few tokens — no DB corruption, no interrupted practice. Worth the lower trigger bar.
+Unlike session commands, this is a pure read. A false-positive (the tutor opens the dashboard when the learner asked something else) costs only a few tokens — no DB corruption, no interrupted practice. Worth the lower trigger bar.

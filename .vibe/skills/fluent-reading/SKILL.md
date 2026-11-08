@@ -1,7 +1,7 @@
 ---
 name: fluent-reading
 description: Run an interactive reading comprehension session with a short target-language text followed by main-idea, detail, vocabulary-in-context, inference, and true/false questions. Triggered only when the learner types /fluent-reading. Presents the text, waits for the learner to read, then asks questions one at a time with immediate feedback, and optionally adds new vocabulary to the spaced-repetition queue.
-allowed-tools: Read, Write, Bash
+allowed-tools: read_file write_file bash
 disable-model-invocation: true
 ---
 
@@ -24,13 +24,13 @@ Skip this skill below A1 mastery 3 — shorter flashcard drills (`/fluent-vocab`
 First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
 
 ```bash
-git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+git pull --rebase --autostash 2>/dev/null || true
 ```
 
 Then load the context:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 Need: `learner-profile` (level, target language, interests), `mastery-db.skills_mastery.reading`.

@@ -1,22 +1,20 @@
 # Database Helper Scripts
 
-Two Python scripts under `.claude/hooks/` manage the six learner databases:
+Two Python scripts under `hooks/` manage the six learner databases:
 
 | Script | Purpose |
 |--------|---------|
 | `read-db.py` | Load all 6 databases (+ computed fields) in one call |
 | `update-db.py` | Apply a session report to all 6 databases atomically |
 
-Both scripts resolve the data directory internally (see `fluent_paths.data_dir()`)
-and produce identical output regardless of CWD. Always invoke them with the
-`${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}` prefix so the script path
-itself resolves whether Fluent is installed as a plugin (CWD is the data
-directory) or cloned (CWD is the repo root).
+Both scripts resolve the data directory internally (see `fluent_paths.data_dir()`).
+A Vibe session runs with the repo root as the working directory, so invoke them
+directly from there.
 
 ## Reading
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 Outputs a single JSON object:
@@ -48,7 +46,7 @@ Exit codes: `0` OK, `1` one or more files missing (partial result with
 ## Writing
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/update-db.py" <<'EOF'
+python3 "hooks/update-db.py" <<'EOF'
 {
   "session_id": "session-005",
   "date": "2026-04-24",

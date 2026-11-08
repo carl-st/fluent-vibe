@@ -1,370 +1,72 @@
-# Fluent Hooks System
+# Fluent Hooks and Helper Scripts
 
-This directory contains automated hooks that manage data integrity, backups, and user feedback for the Fluent language learning system.
+This directory contains the Python helper scripts and the one project hook that manage data integrity and backups for the Fluent language learning system running in Mistral Vibe.
 
-## 🎯 Purpose
+## 📋 Contents
 
-Hooks ensure your learning data is:
-- ✅ **Always backed up** - Multiple backup strategies prevent data loss
-- ✅ **Validated** - JSON structure checked on every save
-- ✅ **Tracked** - Session stats displayed automatically
-- ✅ **Safe** - Backups created before risky operations (compaction)
+| File | Role |
+|------|------|
+| `validate-data.py` | Vibe `post_tool` hook — validates learner JSON and keeps timestamped backups after every write |
+| `fluent_paths.py` | Shared data-directory resolution (`data_dir()`, `ensure_data_dir()`, backups dir, UTF-8 I/O helper) |
+| `read-db.py` | Loads all 6 databases plus computed fields in one call (called at session start by every skill) |
+| `update-db.py` | Atomically updates all 6 databases from one JSON session report on stdin (called at session end; takes a pre-write backup of every file) |
+| `ensure_data_dir.py` | Tiny wrapper that prints the resolved data directory, creating it if missing |
 
-## 📋 Hook Scripts
+## 🪝 Hook: `validate-data.py`
 
-### 1. `validate-data.py` (PostToolUse)
+Registered in [`.vibe/hooks.toml`](../.vibe/hooks.toml):
 
-**Triggered:** After every Write/Edit operation on data files
-
-**What it does:**
-1. Checks if the modified file is in `data/*.json`
-2. Validates JSON structure using Python's JSON parser
-3. Creates timestamped backup: `data/file.json.backup-20231117-143022`
-4. Shows success message or warning if JSON is invalid
-
-**Example output:**
-```
-[Fluent] ✓ Data saved and validated: data/learner-profile.json
-[Fluent] 💾 Backup created: data/learner-profile.json.backup-20231117-143022
+```toml
+[[hooks]]
+name = "fluent-validate-data"
+type = "post_tool"
+match = "re:write_file|edit"
+command = "python3 hooks/validate-data.py"
+timeout = 10.0
 ```
 
-**Error handling:**
-- Invalid JSON triggers exit code 2, blocking the operation and alerting Claude
-- Error message shown: `[Fluent] ⚠️ WARNING: Invalid JSON in data/file.json`
+It fires on every `write_file` / `edit` tool call. If the touched file is a `.json` inside the resolved data directory, the hook:
 
----
+1. Validates the JSON structure
+2. Creates a timestamped backup: `data/file.json.backup-YYYYMMDD-HHMMSS` (last 10 kept per file)
+3. Reports back through the Vibe hook protocol:
+   - **Valid JSON** — structured response with a `system_message` note
+   - **Invalid JSON** — `decision: "deny"`; the tool output the model sees is replaced with the validation error, so the tutor fixes the file immediately
 
-### 2. `session-end.py` (SessionEnd)
+Vibe runs hooks with the session directory as cwd, so the `hooks/`… path resolves from the repo root. The folder must be trusted for `.vibe/hooks.toml` to load — check the startup warnings box if the hook seems inactive, and use `/reload` after editing it.
 
-**Triggered:** When practice session ends (user exits Claude Code)
+### Test the hook manually
 
-**What it does:**
-1. Creates daily backup directory: `.backups/YYYYMMDD/`
-2. Copies all `data/*.json` files to the backup folder
-3. Reads `learner-profile.json` to display session summary
-4. Shows current streak and total sessions
-
-**Example output:**
-```
-[Fluent] 📦 Session backup created: .backups/20231117/
-[Fluent] 💾 Files backed up: learner-profile.json, progress-db.json, mistakes-db.json
-[Fluent] 🔥 Current streak: 7 days
-[Fluent] 📊 Total sessions: 42
-[Fluent] 👋 Great work today!
+```bash
+echo '{"hook_event_name":"post_tool","tool_name":"file_system.write_file","tool_input":{"path":"data/learner-profile.json"}}' | python3 hooks/validate-data.py
 ```
 
-**Backup location:** `.backups/YYYYMMDD/` (excluded from git)
+## 🔄 What replaced the old session hooks
 
----
+Earlier versions had SessionStart / SessionEnd / PreCompact hooks (Claude Code). Mistral Vibe's hook lifecycle only has `pre_tool`, `post_tool`, and `post_agent`, so that work moved into the skills:
 
-### 3. `session-start.py` (SessionStart)
-
-**Triggered:** When Claude Code starts a new session
-
-**What it does:**
-1. Checks if `data/learner-profile.json` exists
-2. If not found, prompts user to run `/fluent-setup`
-3. If found, displays:
-   - Welcome message with learner's name
-   - Target language and current/target level
-   - Current streak
-4. Checks `spaced-repetition.json` for due reviews
-5. Alerts user if reviews are due today
-
-**Example output (first time):**
-```
-[Fluent] 🌍 Welcome to Fluent - The AI Language Learning Kit!
-[Fluent] 📝 Run /fluent-setup to create your personalized learning profile
-```
-
-**Example output (returning user):**
-```
-[Fluent] 🌍 Welcome back, Mohammad!
-[Fluent] 📚 Learning: Spanish
-[Fluent] 🎯 Level: A2 → B1
-[Fluent] 🔥 Streak: 12 days
-[Fluent] 📅 15 items due for review today - Run /fluent-review!
-```
-
----
-
-### 4. PreCompact Hook (inline bash)
-
-**Triggered:** Before conversation is compacted (manual `/compact` or auto-compact)
-
-**What it does:**
-1. Creates safety backup directory: `.backups/precompact/`
-2. Copies all `data/*.json` files
-3. Shows confirmation message
-
-**Example output:**
-```
-[Fluent] 🔒 Pre-compact backup saved
-```
-
-**Purpose:** Ensures data safety before potentially destructive operations
-
----
-
-## 🔧 How It Works
-
-### Hook Configuration
-
-Fluent supports **two hook registration paths** so the same scripts work whether you cloned the repo or installed it as a plugin:
-
-| Install path | Where hooks are registered | Env var used in commands |
-|--------------|---------------------------|--------------------------|
-| Git clone | `.claude/settings.json` | `$CLAUDE_PROJECT_DIR` |
-| Plugin install | `.claude/hooks/hooks.json` (referenced from `plugin.json`) | `$CLAUDE_PLUGIN_ROOT` (with `$CLAUDE_PROJECT_DIR` fallback) |
-
-Both paths point at the same Python scripts under `.claude/hooks/`. The scripts themselves resolve the runtime data directory via `fluent_paths.py` — `$FLUENT_DATA_DIR` → `./data/` → `~/.claude/fluent-data/`.
-
-Clone-mode `.claude/settings.json` example:
-
-```json
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/validate-data.py"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-Plugin-mode `.claude/hooks/hooks.json` example (identical structure, different env var):
-
-```json
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR}}/.claude/hooks/validate-data.py"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-### Hook Execution Flow
-
-1. **Event occurs** (e.g., file is written)
-2. **Claude Code triggers hook** based on matcher pattern
-3. **Script receives JSON input via stdin**:
-   ```json
-   {
-     "session_id": "abc123",
-     "tool_name": "Write",
-     "tool_input": {
-       "file_path": "data/learner-profile.json",
-       "content": "..."
-     }
-   }
-   ```
-4. **Script processes input** and performs actions
-5. **Script exits with status code**:
-   - `0` = Success (stdout shown in verbose mode)
-   - `2` = Blocking error (stderr shown to Claude)
-   - Other = Non-blocking error (logged)
-
-### Exit Code Behavior
-
-| Exit Code | Behavior | When to Use |
-|-----------|----------|-------------|
-| `0` | Success, continue normally | Validation passed, backup created |
-| `2` | Block operation, show stderr to Claude | Invalid JSON, critical error |
-| Other | Log error, continue anyway | Non-critical warning |
-
----
+| Old hook | Now handled by |
+|----------|----------------|
+| SessionStart welcome + stats | Every session skill greets the learner (name, streak, due reviews) from `read-db.py` output |
+| SessionEnd daily snapshot | `update-db.py` backs up all 6 databases before writing, and the `fluent-db-updater` skill commits + pushes the session's progress |
+| PreCompact safety backup | `update-db.py` pre-write backups (plus git history — every session is a commit) |
 
 ## 📂 Backup Strategy
 
-Fluent uses a multi-layered backup system:
+1. **Per-write backups** — `data/*.json.backup-YYYYMMDD-HHMMSS` (validate-data hook; last 10 kept)
+2. **Pre-update snapshots** — `<data_dir>/.backups/pre-update-<session_id>/` before every `update-db.py` run
+3. **Git history** — every session ends with a commit of `data/` and `results/`, so any clone is a full backup
 
-### Layer 1: Individual File Backups (PostToolUse)
-- **Location:** `data/*.json.backup-YYYYMMDD-HHMMSS`
-- **Created:** Every time a data file is modified
-- **Retention:** Manual cleanup (keeps all versions)
-- **Purpose:** Granular version history
+All backup locations are excluded from git via `.gitignore`.
 
-### Layer 2: Daily Snapshots (SessionEnd)
-- **Location:** `.backups/YYYYMMDD/`
-- **Created:** When session ends
-- **Retention:** Manual cleanup (one snapshot per day)
-- **Purpose:** Daily checkpoints
+## 🔍 Troubleshooting
 
-### Layer 3: Pre-Compaction Safety (PreCompact)
-- **Location:** `.backups/precompact/`
-- **Created:** Before conversation compaction
-- **Retention:** Overwritten on each compact
-- **Purpose:** Rollback point for risky operations
-
-**All backup directories are excluded from git via `.gitignore`**
-
----
-
-## 🛠️ Customization
-
-### Adding Custom Validation
-
-Edit `validate-data.py` to add custom validation logic:
-
-```python
-# Example: Validate specific field exists
-if file_path == "data/learner-profile.json":
-    if "learner" not in data or "target_language" not in data["learner"]:
-        print("[Fluent] ⚠️ Missing required field: target_language", file=sys.stderr)
-        sys.exit(2)  # Block operation
-```
-
-### Adding Session Analytics
-
-Edit `session-end.py` to add custom analytics:
-
-```python
-# Example: Calculate accuracy trend
-progress_path = Path("data/progress-db.json")
-if progress_path.exists():
-    with open(progress_path, 'r') as f:
-        progress = json.load(f)
-
-    accuracy = progress.get("overall_stats", {}).get("accuracy_rate", 0)
-    print(f"[Fluent] 📈 Overall accuracy: {accuracy:.1%}")
-```
-
-### Adding New Hooks
-
-To add a new hook type:
-
-1. **Create script** in `.claude/hooks/your-hook.py`
-2. **Make it executable**: `chmod +x .claude/hooks/your-hook.py`
-3. **Add to settings.json**:
-   ```json
-   {
-     "hooks": {
-       "YourHookEvent": [
-         {
-           "hooks": [
-             {
-               "type": "command",
-               "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/your-hook.py"
-             }
-           ]
-         }
-       ]
-     }
-   }
-   ```
-
----
-
-## 🔍 Debugging Hooks
-
-### Enable Debug Mode
-
-Run Claude Code with debug flag:
-```bash
-claude --debug
-```
-
-This shows detailed hook execution logs:
-```
-[DEBUG] Executing hooks for PostToolUse:Write
-[DEBUG] Hook command: .claude/hooks/validate-data.py
-[DEBUG] Hook completed with status 0
-```
-
-### View Hook Output
-
-Enable verbose mode during session:
-- Press **Ctrl+O** to toggle transcript mode
-- Shows all hook stdout/stderr output
-
-### Test Hooks Manually
-
-You can test hooks directly:
-
-```bash
-# Test validate-data hook
-echo '{"tool_name":"Write","tool_input":{"file_path":"data/test.json"}}' | .claude/hooks/validate-data.py
-
-# Test session-start hook
-echo '{}' | .claude/hooks/session-start.py
-```
-
----
-
-## 📊 Hook Events Reference
-
-| Hook Event | When It Fires | Use Case |
-|------------|---------------|----------|
-| `PostToolUse` | After Write/Edit/Read/etc | Data validation, backups |
-| `SessionEnd` | When session ends | Cleanup, summaries, backups |
-| `SessionStart` | When session starts | Welcome messages, stats |
-| `PreCompact` | Before compaction | Safety backups |
-| `UserPromptSubmit` | Before processing user input | Prompt validation |
-| `PreToolUse` | Before tool execution | Permission checks |
-
----
-
-## 🚨 Troubleshooting
-
-### Hook Not Running
-
-**Problem:** Hook doesn't execute
-**Solution:**
-1. Check hook is registered: `cat .claude/settings.json | grep hooks`
-2. Verify script is executable: `ls -la .claude/hooks/`
-3. Test script manually (see "Test Hooks Manually" above)
-
-### Invalid JSON Error
-
-**Problem:** `[Fluent] ⚠️ WARNING: Invalid JSON`
-**Solution:**
-1. Check the last backup: `ls -t data/*.backup-* | head -1`
-2. Validate JSON: `python3 -m json.tool data/file.json`
-3. Restore from backup if needed: `cp data/file.json.backup-XXXXXX data/file.json`
-
-### Permission Denied
-
-**Problem:** `Permission denied` when running hook
-**Solution:**
-```bash
-chmod +x .claude/hooks/*.py
-```
-
-### Hook Timeout
-
-**Problem:** Hook times out (default 60s)
-**Solution:** Increase timeout in settings.json:
-```json
-{
-  "type": "command",
-  "command": "...",
-  "timeout": 120
-}
-```
-
----
+- **Hook not running** — the folder must be trusted (Vibe prompts on first launch); check the warnings box at startup; test manually as shown above.
+- **Invalid JSON flagged** — check `ls -t data/*.backup-* | head -1`, then restore: `cp data/file.json.backup-XXXXXX data/file.json`
+- **Data in the wrong place** — see the resolution order in the [main README](../README.md); force a location with `FLUENT_DATA_DIR`.
 
 ## 📚 Additional Resources
 
-- [Claude Code Hooks Documentation](https://code.claude.com/docs/en/hooks-guide)
-- [Hooks Reference](https://code.claude.com/docs/en/hooks-reference)
-- [Fluent Main README](../../README.md)
-- [Learning System Guide](../../LEARNING_SYSTEM.md)
-
-
+- [Mistral Vibe hooks documentation](https://docs.mistral.ai/vibe/code/overview)
+- [Fluent Main README](../README.md)
+- [Learning System Guide](../LEARNING_SYSTEM.md)

@@ -1,7 +1,7 @@
 ---
 name: fluent-speaking
 description: Run an interactive typed conversation session simulating spoken practice — free-flowing dialogue, role-plays, and opinion questions prioritizing communication over perfect grammar. Triggered only when the learner types /fluent-speaking. Asks questions one at a time in the target language, evaluates clarity and naturalness first and grammar second, and updates all databases at the end.
-allowed-tools: Read, Write, Bash
+allowed-tools: read_file write_file bash
 disable-model-invocation: true
 ---
 
@@ -24,13 +24,13 @@ Skip this skill below A1 mastery 2 — the learner needs a basic word bank and v
 First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
 
 ```bash
-git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+git pull --rebase --autostash 2>/dev/null || true
 ```
 
 Then load the context:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 Need: `learner-profile` (level, target language), `mastery-db.skills_mastery.speaking`.
@@ -128,7 +128,7 @@ For B1+ or when the learner is warmed up:
 
 **Scenario:** {description in native language}
 **Your role:** {what the learner plays}
-**I'll be:** {what Claude plays}
+**I'll be:** {what the tutor plays}
 
 Ready? I'll start...
 

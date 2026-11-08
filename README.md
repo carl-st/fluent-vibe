@@ -1,10 +1,10 @@
 # 🌍 Fluent
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Claude Code](https://img.shields.io/badge/Powered%20by-Claude%20Code-blue)](https://code.claude.com)
+[![Mistral Vibe](https://img.shields.io/badge/Powered%20by-Mistral%20Vibe-orange)](https://mistral.ai)
 
-**The AI Language Learning Kit for Claude Code and others**
+**The AI Language Learning Kit for Mistral Vibe**
 
-*A comprehensive set of rules, guidance, and intelligent tracking systems that transform Claude Code into your personal language tutor. Master any language through adaptive practice powered by proven cognitive science—spaced repetition, active recall, and progress tracking that learns from you.*
+*A comprehensive set of rules, guidance, and intelligent tracking systems that transform Mistral Vibe into your personal language tutor. Master any language through adaptive practice powered by proven cognitive science—spaced repetition, active recall, and progress tracking that learns from you.*
 
 https://github.com/user-attachments/assets/66d68aad-210a-452d-b405-b58c13f42f53
 
@@ -14,62 +14,47 @@ https://github.com/user-attachments/assets/66d68aad-210a-452d-b405-b58c13f42f53
 
 ## 🚀 Quick Start
 
+Fluent lives inside the repository: clone it, trust the folder, and the skills are available as slash commands from any device.
+
 ### 1. Install
 
 ```bash
-claude plugin marketplace add m98/fluent && claude plugin install fluent@m98
+git clone https://github.com/carl-st/fluent-korean.git
+cd fluent-korean
+uv tool install mistral-vibe   # if Vibe is not installed yet
+vibe                           # launch from the repo root, trust the folder when prompted
 ```
 
-One line. Registers the marketplace, installs the plugin. Works globally from any directory after this.
-
 ### 2. Start learning
-
-Restart Claude Code, then:
 
 ```
 /fluent-setup     # onboard: name, target language, level, goals
 /fluent-learn     # begin your first session
 ```
 
-That's it.
+That's it. Every session ends with a git commit (and push, if a remote is configured), so clone the repo on another device and continue exactly where you left off.
 
 ---
 
 ### Requirements
 
-- [Claude Code](https://code.claude.com) installed
+- [Mistral Vibe](https://mistral.ai) installed (`uv tool install mistral-vibe`)
 - **Python 3.8+** (most systems already have it — check with `python3 --version`). Install via [python.org](https://www.python.org/downloads/), `brew install python3`, or your distro's package manager. No pip packages needed — Fluent uses only the standard library.
-- **Bash** for the PreCompact backup hook (built-in on macOS/Linux; on Windows use WSL or Git Bash).
 
-### Verify, update, uninstall
-
-```bash
-claude plugin list                    # expect: fluent@m98  enabled
-claude plugin update fluent@m98       # pull latest version
-claude plugin uninstall fluent@m98    # remove entirely
-```
-
-### Alternative: git clone
-
-Prefer to hack on the skills or keep per-project state?
+### Update
 
 ```bash
-git clone https://github.com/m98/fluent.git
-cd fluent
-claude          # launch from repo root
-/fluent-setup
+git pull            # inside the repo — gets skills, fixes, and (on the same branch) your progress
 ```
-
-Learner data lives in `./data/` inside the cloned repo instead of `~/.claude/fluent-data/`.
 
 ### Where your data lives
 
 Fluent resolves the data directory in this order — first match wins:
 
 1. `$FLUENT_DATA_DIR` if set (override everything).
-2. `$CLAUDE_PROJECT_DIR/data/` if it has `learner-profile.json` (clone mode, running from outside the repo root).
-3. `./data/` if it has `learner-profile.json` (clone mode, running inside the repo).
-4. `~/.claude/fluent-data/` (plugin-install default).
+2. `./data/` if it has `learner-profile.json` (Vibe session with the repo as working directory).
+3. `<repo-root>/data/` (repo checkout — covers the first run before the profile exists).
+4. `~/.vibe/fluent-data/` (fallback when running outside the repo).
 
 Set `FLUENT_DATA_DIR` to run multiple learners on one machine:
 
@@ -80,7 +65,7 @@ export FLUENT_DATA_DIR=~/.fluent/dutch
 Check where Fluent is currently looking:
 
 ```bash
-python3 -c "import sys; sys.path.insert(0, '.claude/hooks'); from fluent_paths import data_dir; print(data_dir())"
+python3 -c "import sys; sys.path.insert(0, 'hooks'); from fluent_paths import data_dir; print(data_dir())"
 ```
 
 ---
@@ -116,7 +101,7 @@ Most language learning apps fail because they're built for engagement metrics, n
 
 ## 📖 What Is This?
 
-This is a comprehensive, **open-source language learning system** that transforms [Claude Code](https://code.claude.com) into your personal AI language tutor.
+This is a comprehensive, **open-source language learning system** that transforms [Mistral Vibe](https://mistral.ai) into your personal AI language tutor.
 
 The system uses **evidence-based learning methodologies** including:
 - **Spaced Repetition (SM-2 algorithm)** - Review at optimal intervals
@@ -185,16 +170,16 @@ This system implements proven learning science:
 
 ## 🎮 Available Commands & Skills
 
-Fluent is built as **Claude Code skills** — 12 of them. Skills work two ways:
+Fluent is built as **Mistral Vibe skills** — 12 of them living in `.vibe/skills/`, loaded whenever you launch Vibe in the repo. Skills work two ways:
 
 1. **Type the slash command** (`/fluent-learn`, `/fluent-vocab`, etc.) — you explicitly start a session. Learner-facing skills are gated so they only run this way. No accidental 20-minute session triggered by a chat message.
-2. **Ask naturally** — read-only skills like `/fluent-progress` auto-trigger when you ask "how am I doing?" or "what's my streak?". Helper skills (SM-2 math, feedback formatter, DB updater, session analyzer) auto-load whenever Claude needs them during a session.
+2. **Ask naturally** — read-only skills like `/fluent-progress` auto-trigger when you ask "how am I doing?" or "what's my streak?". Helper skills (SM-2 math, feedback formatter, DB updater, session analyzer) auto-load whenever the tutor needs them during a session.
 
 All 12 skills appear in your `/` menu so you can always invoke any of them manually.
 
 ### Learner-facing commands
 
-These are the commands you'll use daily. Each is backed by a dedicated skill under `.claude/skills/`.
+These are the commands you'll use daily. Each is backed by a dedicated skill under `.vibe/skills/`.
 
 #### Core Commands
 
@@ -217,16 +202,16 @@ These are the commands you'll use daily. Each is backed by a dedicated skill und
 
 | Command | What It Does | When & Why to Use It |
 |---------|--------------|----------------------|
-| **`/fluent-progress`** | **Statistics dashboard** - Shows your accuracy trends, streak days, mastery levels, achievements unlocked, and weak areas. Visual progress charts. | **Weekly check-in** - Read-only and safe to auto-invoke. Ask "how am I doing?" and Claude will open the dashboard automatically. |
+| **`/fluent-progress`** | **Statistics dashboard** - Shows your accuracy trends, streak days, mastery levels, achievements unlocked, and weak areas. Visual progress charts. | **Weekly check-in** - Read-only and safe to auto-invoke. Ask "how am I doing?" and the dashboard opens automatically. |
 
 ### Helper skills (behind the scenes)
 
-These skills don't change what the learner-facing commands do — they let Claude apply the same algorithms, feedback format, and database logic consistently across every session. You can still invoke them via `/` if curious.
+These skills don't change what the learner-facing commands do — they let the tutor apply the same algorithms, feedback format, and database logic consistently across every session. You can still invoke them via `/` if curious.
 
 | Skill | What It Does | When It Runs |
 |-------|--------------|--------------|
 | **`/fluent-sm2-calculator`** | SM-2 spaced-repetition algorithm reference: quality scale, interval formula, easiness-factor update, mastery-level transitions. | Auto-loaded whenever a review item is scored. |
-| **`/fluent-feedback-formatter`** | Canonical per-answer feedback template — severity tagging (🔴 critical / 🟡 moderate / 🟢 minor), category labels, tone rules. | Auto-loaded every time Claude grades an answer. |
+| **`/fluent-feedback-formatter`** | Canonical per-answer feedback template — severity tagging (🔴 critical / 🟡 moderate / 🟢 minor), category labels, tone rules. | Auto-loaded every time the tutor grades an answer. |
 | **`/fluent-db-updater`** | How to call `update-db.py` with a single JSON payload that atomically updates all 6 databases at session end. | Auto-loaded when a session ends. |
 | **`/fluent-session-analyzer`** | Parses `/results/fluent-{skill}-session-{ID}.md` files to extract error patterns, strengths, and focus areas for the next session. | Auto-loaded when planning the next session. |
 
@@ -278,15 +263,14 @@ These skills don't change what the learner-facing commands do — they let Claud
 The AI follows these guides:
 
 - **`LEARNING_SYSTEM.md`** - Complete methodology (how to teach)
-- **`CLAUDE.md`** - AI tutor's role and personality
+- **`TUTOR.md`** - AI tutor's role and personality
 - **`PRACTICE.md`** - Pattern analysis and tracking
-- **`.claude/references/`** - Shared templates (SM-2 worked examples, feedback template, DB payload schema, session-file format) that every skill references
+- **`docs/`** - Shared templates (SM-2 worked examples, feedback template, DB payload schema, session-file format) that every skill references
 
 ### Interface Layer
 
-- **Skills** (`.claude/skills/`) — 12 skills total. 8 learner-facing (`/fluent-setup`, `/fluent-learn`, `/fluent-vocab`, `/fluent-writing`, `/fluent-speaking`, `/fluent-reading`, `/fluent-review`, `/fluent-progress`) run when you invoke them. 4 helper skills (`/fluent-sm2-calculator`, `/fluent-feedback-formatter`, `/fluent-db-updater`, `/fluent-session-analyzer`) auto-load whenever Claude needs them during a session — and are also directly `/`-invokable if you want to read the reference.
-- **Plugin manifests** (`.claude-plugin/`) — `plugin.json` + `marketplace.json` make Fluent installable via `/plugin marketplace add m98/fluent`.
-- **Automatic Hooks** (`.claude/hooks/`) — SessionStart welcome, SessionEnd backups, PostToolUse JSON validation + backups, PreCompact safety backup. Both `hooks.json` (plugin mode) and `.claude/settings.json` (clone mode) wire them up.
+- **Skills** (`.vibe/skills/`) — 12 skills total. 8 learner-facing (`/fluent-setup`, `/fluent-learn`, `/fluent-vocab`, `/fluent-writing`, `/fluent-speaking`, `/fluent-reading`, `/fluent-review`, `/fluent-progress`) run when you invoke them. 4 helper skills (`/fluent-sm2-calculator`, `/fluent-feedback-formatter`, `/fluent-db-updater`, `/fluent-session-analyzer`) auto-load whenever the tutor needs them during a session — and are also directly `/`-invokable if you want to read the reference.
+- **Project Hooks** (`.vibe/hooks.toml`) — a `post_tool` validator that JSON-validates every write to a learner database and keeps timestamped backups. Wired up automatically when Vibe runs in the folder you trust.
 - **Session Results** (`/results/`) — Detailed practice logs per session, parsed by `fluent-session-analyzer` to plan future sessions.
 
 ---
@@ -336,47 +320,36 @@ The system automatically adjusts:
 
 ### Technology Stack
 
-- **Platform:** Claude Code (Anthropic), installable as a plugin or by clone
-- **AI Model:** Claude (any Claude Code-supported model)
+- **Platform:** Mistral Vibe (Mistral AI), running directly in the repo
+- **AI Model:** Any Vibe-configured model (Mistral models by default)
 - **Data Format:** JSON (human-readable)
 - **Skills:** Markdown `SKILL.md` files with YAML frontmatter (12 total — 8 learner-facing + 4 helper)
-- **Hooks:** Python + Bash, triggered on SessionStart / SessionEnd / PostToolUse / PreCompact
+- **Hooks:** Python, triggered on post_tool (Write/Edit)
 - **Algorithm:** SM-2 (SuperMemo 2)
 - **Version Control:** Git
 
 ### Data Privacy & Security
 
 - ✅ **Cross-device sync** — every session ends with a git commit (+ push) of `data/` and `results/`
-- ✅ **No external API calls** (except Claude Code itself)
+- ✅ **No external API calls** (except your AI provider's API through Vibe)
 - ✅ **Automatic backups** to `.backups/` directory
 - ✅ **No tracking, no analytics, no telemetry**
 - ⚠️ **Learning data is committed to the repo** — keep the repository private if you don't want your name, goals, and session transcripts visible
 
 ### Hooks System (Automated Data Management)
 
-Fluent uses intelligent Claude Code hooks to ensure your data is always safe and validated:
+Fluent uses a Vibe project hook to ensure your data is always safe and validated:
 
-**🔄 PostToolUse Hook** (after every Write/Edit)
-- ✅ Creates timestamped backup: `data/file.json.backup-20231117-143022`
-- ✅ Validates JSON structure automatically
-- ✅ Alerts you immediately if data is malformed
+**🔄 post_tool Hook** (after every write_file / edit on a learner JSON)
+- ✅ Validates the JSON structure automatically
+- ✅ Alerts the tutor immediately if data is malformed (the tool output is replaced with the validation error)
+- ✅ Creates timestamped backup: `data/file.json.backup-20231117-143022` (last 10 kept)
 
-**📦 SessionEnd Hook** (when you finish practicing)
-- ✅ Creates daily snapshot in `.backups/YYYYMMDD/`
-- ✅ Displays session summary with current streak
-- ✅ Shows total practice sessions completed
-
-**🌅 SessionStart Hook** (when you begin)
-- ✅ Welcome message with your name and stats
-- ✅ Shows current language, level, and streak
-- ✅ Alerts you if reviews are due today
-
-**🔒 PreCompact Hook** (before compaction)
-- ✅ Safety backup to prevent data loss
+The welcome message and session stats that previous versions showed via SessionStart/SessionEnd hooks are now part of the skills themselves — every session skill greets with your name, streak, and due reviews from `read-db.py`, and `update-db.py` takes a pre-write backup of all 6 databases on every session-end update.
 
 **You'll never lose your progress.** All backups are automatic and excluded from git.
 
-See [`.claude/hooks/README.md`](.claude/hooks/README.md) for technical details.
+See [`hooks/README.md`](hooks/README.md) for technical details.
 
 ---
 
@@ -418,7 +391,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **Claude** by Anthropic - For the amazing AI capabilities
+- **Mistral AI** - For Mistral Vibe and the AI capabilities
+- **The original [m98/fluent](https://github.com/m98/fluent) project** - This kit started as its fork
 - **SuperMemo** - For the SM-2 algorithm
 - **Anki** - For inspiring the flashcard approach
 - **Language learning research** - Krashen, Bjork, Ebbinghaus, and many others
@@ -445,9 +419,9 @@ It helps others discover this project and motivates us to keep improving it!
 ## 📈 Project Stats
 
 - **Skills:** 12 (8 learner-facing + 4 helper)
-- **Hooks:** 5 automated (SessionStart, SessionEnd, PostToolUse, PreCompact, DB helpers)
+- **Hooks:** 1 project hook + DB helper scripts
 - **Databases:** 6 JSON tracking files
-- **Install paths:** 2 (Claude Code plugin + git clone — both supported)
+- **Install paths:** 1 (git clone — skills load from the repo)
 - **Languages Supported:** All (system is fully language-agnostic)
 - **Learning Methods:** 6 evidence-based principles
 - **Contributors:** [See contributors](https://github.com/m98/fluent/graphs/contributors)
@@ -465,31 +439,24 @@ It helps others discover this project and motivates us to keep improving it!
 **`python3: command not found` when hooks run.**
 Install Python 3.8+ and make sure `python3` is on your PATH. On macOS: `brew install python3`. On Debian/Ubuntu: `sudo apt install python3`. On Windows: install via [python.org](https://www.python.org/downloads/) or use WSL.
 
-**Hooks silently do nothing on Windows.**
-The PreCompact hook is a Bash script. Run Claude Code from WSL or Git Bash. The Python hooks (SessionStart, SessionEnd, PostToolUse) work on native Windows Python — only PreCompact is Bash-only.
+**Hooks silently do nothing.**
+The project hook (`.vibe/hooks.toml`) only loads when the folder is trusted. Use `/reload` after editing it, and check the startup warnings box for hook load errors. The hook itself is plain Python — it works on native Windows.
 
 **Learner data is showing up in the wrong place.**
 Check the data-dir resolution order (see above). Set `FLUENT_DATA_DIR` explicitly in your shell to force a specific location.
 
 **JSON validation fails after a manual edit.**
-The PostToolUse hook exits with status 2 if it finds malformed JSON. The last 10 backups live at `<data_dir>/<filename>.json.backup-<timestamp>`. Restore with: `cp <data_dir>/learner-profile.json.backup-XXXXXX <data_dir>/learner-profile.json`.
+The post_tool hook flags malformed JSON in the tool output and keeps the last 10 backups at `<data_dir>/<filename>.json.backup-<timestamp>`. Restore with: `cp <data_dir>/learner-profile.json.backup-XXXXXX <data_dir>/learner-profile.json`.
 
-**Skills don't appear in the `/` menu after plugin install.**
-Restart Claude Code. If still missing, verify install:
-
-```bash
-claude plugin list                              # should show fluent@m98 enabled
-claude plugin validate fluent@m98
-```
-
-Or from inside a session: `/plugin list`. If the plugin is disabled, enable it: `claude plugin enable fluent@m98`.
+**Skills don't appear in the `/` menu.**
+You're probably not in the repo folder, or the folder isn't trusted yet. Launch `vibe` from the repo root, trust it when prompted, then check the `/` menu. Inside a session, `/reload` re-reads skills from disk.
 
 ---
 
 ## 🔗 Useful Links
 
-- [Claude Code Documentation](https://code.claude.com/docs)
-- [Claude Code Plugins](https://code.claude.com/docs/en/plugins)
+- [Mistral Vibe Documentation](https://docs.mistral.ai/vibe/code/overview)
+- [Mistral Vibe on GitHub](https://github.com/mistralai/mistral-vibe)
 - [SM-2 Algorithm Explained](https://www.supermemo.com/en/archives1990-2015/english/ol/sm2)
 - [CEFR Levels](https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions)
 - [Spaced Repetition Research](https://www.gwern.net/Spaced-repetition)
@@ -503,7 +470,7 @@ Or from inside a session: `/plugin list`. If the plugin is disabled, enable it: 
 A: It’s ultra-minimalistic, just a terminal and pure learning. No extra distributions, no ads, no gimmicks. Infinitely adaptable. You ask it to teach you something, and it does. And best of all, everything stays private on your machine.
 
 **Q: Do I need to know how to code?**
-A: No! Just install Claude Code and run `/fluent-setup`. That's it.
+A: No! Just install Vibe, clone the repo, and run `/fluent-setup`. That's it.
 
 **Q: How long until I see progress?**
 A: Most learners see measurable improvement within the first week. The system tracks everything so you can see exactly how you're improving.
@@ -512,15 +479,16 @@ A: Most learners see measurable improvement within the first week. The system tr
 A: Yes! The system adapts to your goals. Tell it you're preparing for DELE/DELF/TestDaF/etc. and it'll focus on exam-relevant content.
 
 **Q: Is my data safe?**
-A: Absolutely. Everything stays on your machine. No cloud storage, no external servers (except Claude Code itself).
+A: Absolutely. Everything stays on your machine (and whichever remote you push the repo to). No cloud storage, no external servers (except your AI provider's API).
 
 **Q: Can I export my progress?**
 A: Yes! All data is in human-readable JSON. You can export, analyze, or migrate it anytime.
 
-**Q: Can I use Open AI's Codex CLI  or Gemini CLI instead of Claude Code?**
-A: We have AGENTS.md for instructing other AI CLIs as well, but this kit is specifically optimized for 
-Claude Code and its unique capabilities. Using other AI platforms may not yield the same results. 
-But feel free to experiment and share your findings!
+**Q: Can I use a different AI CLI instead of Mistral Vibe?**
+A: This kit is specifically optimized for Mistral Vibe and its capabilities (project skills,
+`.vibe/hooks.toml`, AGENTS.md discovery). The original upstream supports other AI CLIs — see
+[m98/fluent](https://github.com/m98/fluent) — but using another platform may not yield the same
+results here.
 
 
 ---
@@ -528,8 +496,8 @@ But feel free to experiment and share your findings!
 *Start your language learning journey today!* 🚀
 
 ```bash
-git clone https://github.com/m98/fluent.git
-cd fluent
-claude
+git clone https://github.com/carl-st/fluent-korean.git
+cd fluent-korean
+vibe
 /fluent-setup
 ```

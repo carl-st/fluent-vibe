@@ -1,21 +1,15 @@
 """
-Fluent path resolution — supports dual-mode (clone vs plugin install).
+Fluent path resolution for the Mistral Vibe project setup.
 
 Data directory resolution precedence:
   1. $FLUENT_DATA_DIR if set (absolutized)
-  2. $CLAUDE_PROJECT_DIR/data if that dir holds learner-profile.json (clone mode, non-repo cwd)
-  3. ./data if ./data/learner-profile.json exists (clone mode, in-repo cwd)
-  4. <repo-root>/data if cwd or $CLAUDE_PROJECT_DIR is inside the plugin
-     repo checkout and it has a data/ dir (clone mode, first run — no
-     learner-profile.json yet, keeps progress in git for device sync)
-  5. ~/.claude/fluent-data (plugin-mode fallback)
+  2. ./data if ./data/learner-profile.json exists (running from the repo root)
+  3. <repo-root>/data (Vibe sessions run with the repo root as cwd; also
+     covers the first run before learner-profile.json exists, so progress
+     lives in git and syncs across devices from day one)
+  4. ~/.vibe/fluent-data (fallback when running outside the repo)
 
-Plugin-root resolution precedence:
-  1. $CLAUDE_PLUGIN_ROOT if set
-  2. $CLAUDE_PROJECT_DIR if set
-  3. parent of this file's .claude/ dir (dev-run fallback)
-
-Pure resolvers (data_dir / plugin_root / backups_dir) do not create directories.
+Pure resolvers (data_dir / repo_root / backups_dir) do not create directories.
 Call ensure_data_dir() before writing.
 """
 from __future__ import annotations
@@ -42,36 +36,33 @@ def force_utf8_io() -> None:
 
 
 @lru_cache(maxsize=1)
+def repo_root() -> Path:
+    """Resolve the repository root directory (parent of hooks/)."""
+    return Path(__file__).resolve().parents[1]
+
+
+@lru_cache(maxsize=1)
 def data_dir() -> Path:
     """Resolve the runtime data directory (pure — does not create it)."""
     env = os.environ.get("FLUENT_DATA_DIR")
     if env:
         return Path(env).expanduser().resolve()
 
-    project = os.environ.get("CLAUDE_PROJECT_DIR")
-    if project:
-        candidate = (Path(project) / "data").resolve()
-        if (candidate / "learner-profile.json").exists():
-            return candidate
-
     cwd_data = (Path.cwd() / "data").resolve()
     if (cwd_data / "learner-profile.json").exists():
         return cwd_data
 
-    # Clone mode: working from a repo checkout that has its own data/ dir.
-    # Default to the in-repo data/ even before learner-profile.json exists
-    # (first run) so progress lives in git and syncs across devices from day one.
-    root = plugin_root()
+    root = repo_root()
     if (root / "data").exists():
+        root_data = (root / "data").resolve()
         try:
             cwd = Path.cwd().resolve()
         except OSError:
             cwd = None
-        anchors = [a for a in [cwd, Path(project).resolve() if project else None] if a]
-        if any(a == root or root in a.parents for a in anchors):
-            return (root / "data").resolve()
+        if cwd is None or cwd == root or root in cwd.parents:
+            return root_data
 
-    return (Path.home() / ".claude" / "fluent-data").resolve()
+    return (Path.home() / ".vibe" / "fluent-data").resolve()
 
 
 def ensure_data_dir() -> Path:
@@ -82,22 +73,10 @@ def ensure_data_dir() -> Path:
 
 
 @lru_cache(maxsize=1)
-def plugin_root() -> Path:
-    """Resolve the plugin/repo root directory."""
-    env = os.environ.get("CLAUDE_PLUGIN_ROOT")
-    if env:
-        return Path(env).resolve()
-    env = os.environ.get("CLAUDE_PROJECT_DIR")
-    if env:
-        return Path(env).resolve()
-    return Path(__file__).resolve().parents[2]
-
-
-@lru_cache(maxsize=1)
 def backups_dir() -> Path:
-    """Resolve the backups directory. Always nested inside data_dir to avoid collisions
-    when the fallback ~/.claude/fluent-data is used (the parent ~/.claude/ is shared
-    across plugins)."""
+    """Resolve the backups directory. Always nested inside data_dir to avoid
+    collisions when the fallback ~/.vibe/fluent-data is used (the parent
+    ~/.vibe/ is shared across projects)."""
     return data_dir() / ".backups"
 
 

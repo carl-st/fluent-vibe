@@ -1,7 +1,7 @@
 ---
 name: fluent-vocab
 description: Run an interactive vocabulary drill session with flashcard-style prompts, spaced repetition, and per-answer feedback. Triggered only when the learner types /fluent-vocab. Reads spaced-repetition / mistakes / mastery DBs to pick words, presents one word at a time, scores each answer, and calls fluent-db-updater at the end.
-allowed-tools: Read, Write, Bash
+allowed-tools: read_file write_file bash
 disable-model-invocation: true
 ---
 
@@ -24,13 +24,13 @@ Skip this skill if no vocabulary items are due and no new words are queued — o
 First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
 
 ```bash
-git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+git pull --rebase --autostash 2>/dev/null || true
 ```
 
 Then load the vocabulary data:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 If the helper is unavailable, resolve `<data_dir>` via `fluent_paths.data_dir()` then read:

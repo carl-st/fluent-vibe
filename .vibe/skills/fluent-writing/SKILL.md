@@ -1,7 +1,7 @@
 ---
 name: fluent-writing
 description: Run an interactive writing practice session (emails, letters, forms, short texts) with systematic error analysis, category-tagged corrections, and detailed feedback. Triggered only when the learner types /fluent-writing. Selects a scenario matched to mastery, lets the learner compose, then analyzes grammar, register, vocabulary, structure, and spelling before updating all databases.
-allowed-tools: Read, Write, Bash
+allowed-tools: read_file write_file bash
 disable-model-invocation: true
 ---
 
@@ -24,13 +24,13 @@ Skip this skill in favor of `/fluent-vocab` if the learner has not yet hit maste
 First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
 
 ```bash
-git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+git pull --rebase --autostash 2>/dev/null || true
 ```
 
 Then load the context:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 Need: `learner-profile` (level, target language, focus areas), `mistakes-db` (weak writing patterns), `mastery-db` (writing sub-skills).

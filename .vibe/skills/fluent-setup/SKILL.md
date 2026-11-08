@@ -1,7 +1,7 @@
 ---
 name: fluent-setup
 description: One-time interactive onboarding that creates the learner's personalized language-learning profile — name, target language, native language, current/target CEFR level, timeline, daily minutes, and learning goals. Triggered only when the learner types /fluent-setup. Also handles profile updates and resets for returning users. Must never auto-invoke because re-running can reset progress.
-allowed-tools: Read, Write, Bash, AskUserQuestion
+allowed-tools: read_file write_file bash ask_user_question
 disable-model-invocation: true
 ---
 
@@ -14,21 +14,21 @@ One-time onboarding that seeds all 6 databases in the Fluent data directory. Aft
 The data directory is resolved at runtime (not hardcoded to `./data/`):
 
 1. `$FLUENT_DATA_DIR` if set
-2. `$CLAUDE_PROJECT_DIR/data/` if that path contains `learner-profile.json` (clone mode)
-3. `./data/` if `./data/learner-profile.json` exists (clone mode, cwd inside repo)
-4. `~/.claude/fluent-data/` otherwise (plugin-install default)
+2. `./data/` if `./data/learner-profile.json` exists (Vibe session with the repo as cwd)
+3. `<repo-root>/data/` (repo checkout — covers the first run before the profile exists)
+4. `~/.vibe/fluent-data/` otherwise (fallback when running outside the repo)
 
 Always resolve it via the helper rather than writing literal `data/` paths:
 
 ```bash
-FLUENT_DATA="$(python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/ensure_data_dir.py")"
+FLUENT_DATA="$(python3 "hooks/ensure_data_dir.py")"
 ```
 
 or from Python:
 
 ```python
 import sys
-sys.path.insert(0, f"{PLUGIN_ROOT}/.claude/hooks")
+sys.path.insert(0, "hooks")
 from fluent_paths import ensure_data_dir
 DATA = ensure_data_dir()
 ```
@@ -46,14 +46,14 @@ Skip this skill if a profile already exists and the learner did not ask to chang
 First, pull the latest progress (another device may have committed a profile or sessions already):
 
 ```bash
-git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+git pull --rebase --autostash 2>/dev/null || true
 ```
 
 Then resolve the data directory and probe for `learner-profile.json`:
 
 ```bash
 DATA_DIR="$(python3 -c "
-import sys; sys.path.insert(0, '${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks')
+import sys; sys.path.insert(0, 'hooks')
 from fluent_paths import data_dir
 print(data_dir())
 ")"
@@ -79,7 +79,7 @@ This AI-powered system will help you learn any language through:
 
 ### 3. Collect info
 
-Use the `AskUserQuestion` tool to gather questions in batches when possible. Required fields:
+Use the `ask_user_question` tool to gather questions in batches when possible. Required fields:
 
 1. **Name** — personalizes greetings.
 2. **Target language** — the language being learned (e.g. Spanish, French, German, Japanese, Korean, Arabic, Dutch).
@@ -180,12 +180,12 @@ Start from the templates in `data-examples/`. Resolve the target directory via `
 - `spaced-repetition.json` — empty queues, `daily_limits.review_items_per_day: 20`.
 - `session-log.json` — empty `sessions` array, `total_sessions: 0`.
 
-Use the Write tool for each. Do not call `update-db.py` — that script is for session updates, not bootstrapping.
+Use the write_file tool for each. Do not call `update-db.py` — that script is for session updates, not bootstrapping.
 
 Then commit the fresh baseline so progress syncs across devices from day one (clone mode — skip silently if the data directory is not inside a git working tree):
 
 ```bash
-REPO="$(git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" rev-parse --show-toplevel 2>/dev/null || true)"
+REPO="$(git rev-parse --show-toplevel 2>/dev/null || true)"
 if [ -n "$REPO" ]; then
   git -C "$REPO" add data/ || true
   git -C "$REPO" commit -m "fluent: initial learner profile ({name}, {target_language})" || true
@@ -228,7 +228,7 @@ What would you like to do?
 
   ```bash
   DATA_DIR="$(python3 -c "
-  import sys; sys.path.insert(0, '${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks')
+  import sys; sys.path.insert(0, 'hooks')
   from fluent_paths import data_dir
   print(data_dir())
   ")"

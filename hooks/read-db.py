@@ -4,7 +4,7 @@ Fluent DB Reader Script
 Loads all 6 learning databases and outputs a single JSON object to stdout.
 
 Usage:
-    python3 .claude/hooks/read-db.py
+    python3 hooks/read-db.py
 
 Exit codes: 0=success, 1=partial (some files missing), 2=critical error
 """

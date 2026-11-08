@@ -102,4 +102,4 @@ Do not rename these headings or reorder sections. Changes break the analyzer.
 
 Session files are **markdown narrative**. JSON databases (`mistakes-db.json`, `mastery-db.json`) hold aggregated counts and SM-2 state. Both must be updated — the markdown records the story, the JSON records the numbers.
 
-Call `.claude/hooks/update-db.py` once at session end with a full payload (see `db-updater-payload.example.json`). The script handles the JSON side; the practice skill handles the markdown side. The `fluent-db-updater` skill documents the payload schema.
+Call `hooks/update-db.py` once at session end with a full payload (see the `fluent-db-updater` skill for the canonical example). The script handles the JSON side; the practice skill handles the markdown side. The `fluent-db-updater` skill documents the payload schema.

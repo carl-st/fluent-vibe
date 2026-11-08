@@ -3,7 +3,7 @@
 
 Thin CLI wrapper around fluent_paths.ensure_data_dir() so shell callers can do:
 
-    FLUENT_DATA="$(python3 .../.claude/hooks/ensure_data_dir.py)"
+    FLUENT_DATA="$(python3 .../hooks/ensure_data_dir.py)"
 """
 import sys
 from pathlib import Path

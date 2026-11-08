@@ -2,6 +2,47 @@
 
 All notable changes to Fluent will be documented in this file.
 
+## [0.4.0] — 2026-11-08
+
+### Changed — Mistral Vibe native
+
+This fork now targets **Mistral Vibe** instead of Claude Code.
+
+- Skills moved from `.claude/skills/` to `.vibe/skills/` (loaded by Vibe
+  when the repo folder is trusted); skill frontmatter adapted
+  (`allowed-tools` now lists Vibe tool names: `read_file`, `write_file`,
+  `bash`, `ask_user_question`). `disable-model-invocation: true` gating
+  is unchanged.
+- Added `.vibe/hooks.toml` with a single `post_tool` hook
+  (`hooks/validate-data.py`) that JSON-validates learner data writes and
+  keeps timestamped backups. It now speaks the Vibe hook protocol
+  (structured stdout; a `deny` decision replaces the tool output the model
+  sees when JSON is invalid).
+- README updated: git-commit sync of `data/` + `results/` at session end
+  and `git pull` at session start, so progress continues on any device.
+- `hooks/fluent_paths.py` simplified: data dir resolves `$FLUENT_DATA_DIR` →
+  `./data/` (with profile) → `<repo>/data/` → `~/.vibe/fluent-data/`.
+- Skill support files moved next to their skills
+  (`payload.example.json`, `feedback-template.md`, `worked-examples.md`);
+  `docs/session-file-template.md` moved to `docs/`.
+
+### Removed
+
+- Claude Code plugin machinery: `.claude-plugin/` (marketplace + plugin
+  manifests), `.claude/settings.json`, `hooks/hooks.json`.
+- `session-start.py`, `session-end.py`, and the PreCompact backup —
+  Vibe's hook lifecycle has no session start/end/compaction events.
+  Their responsibilities moved into the session skills (greeting/stats
+  from `read-db.py`) and `update-db.py` (pre-write backups + git commit).
+- `CLAUDE.md` renamed to `TUTOR.md` (same role definition; referenced
+  from `AGENTS.md`, which Vibe auto-loads).
+
+### Upgrade
+
+If you previously used the Claude Code plugin install, remove it
+(`claude plugin uninstall`) and switch to launching `vibe` inside your
+clone of this repository. Existing `data/` continues to work as-is.
+
 ## [0.3.0] — 2026-06-15
 
 ### Added

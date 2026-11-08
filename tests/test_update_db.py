@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Smoke test for .claude/hooks/update-db.py.
+Smoke test for hooks/update-db.py.
 
 Runs the script against a fresh fixture DB in a temp dir, feeds it a sample
 session report, and asserts schema invariants on the output files.
@@ -18,7 +18,7 @@ import unittest
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SCRIPT = REPO_ROOT / ".claude" / "hooks" / "update-db.py"
+SCRIPT = REPO_ROOT / "hooks" / "update-db.py"
 
 
 def make_fixtures(data_dir: Path):
@@ -217,7 +217,7 @@ class UpdateDbSmokeTest(unittest.TestCase):
         self.assertEqual(pat["examples"][-1]["correct"], "Hij spreekt")
 
         # Backup directory exists (nested inside data/ to avoid collisions
-        # with other plugins when the global fallback ~/.claude/fluent-data is used).
+        # with other plugins when the global fallback ~/.vibe/fluent-data is used).
         backup = self.tmp / "data" / ".backups" / "pre-update-session-002"
         self.assertTrue(backup.exists(), "pre-update backup missing")
 

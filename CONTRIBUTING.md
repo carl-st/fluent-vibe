@@ -33,7 +33,7 @@ This project adheres to a code of conduct that all contributors are expected to 
 
 ### Prerequisites
 
-- [Claude Code](https://code.claude.com) installed
+- [Mistral Vibe](https://github.com/mistralai/mistral-vibe) installed
 - Git for version control
 - Basic understanding of:
   - JSON data structures
@@ -56,7 +56,7 @@ This project adheres to a code of conduct that all contributors are expected to 
 
 3. **Test the system:**
    ```bash
-   claude
+   vibe
    /fluent-setup
    ```
 
@@ -75,7 +75,7 @@ Before creating bug reports, please check existing issues to avoid duplicates.
 - Exact steps to reproduce
 - Expected vs actual behavior
 - Screenshots if applicable
-- Your environment (OS, Claude Code version)
+- Your environment (OS, Vibe version)
 - Error messages or logs
 
 **Use this template:**
@@ -96,7 +96,7 @@ If applicable, add screenshots.
 
 **Environment:**
 - OS: [e.g. macOS 14.0]
-- Claude Code Version: [e.g. 1.0.0]
+- Mistral Vibe version: [e.g. latest]
 - Target Language: [e.g. Spanish]
 ```
 
@@ -359,7 +359,7 @@ Contributors are recognized in several ways:
 - [SM-2 Algorithm](https://www.supermemo.com/en/archives1990-2015/english/ol/sm2)
 - [CEFR Levels](https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions)
 - [Spaced Repetition Research](https://www.gwern.net/Spaced-repetition)
-- [Claude Code Docs](https://code.claude.com/docs)
+- [Mistral Vibe docs](https://docs.mistral.ai/vibe/code/overview)
 
 ### Project Resources
 

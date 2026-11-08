@@ -1,7 +1,7 @@
 ---
 name: fluent-learn
 description: Main adaptive language-learning session that mixes skills (writing, speaking, vocabulary, reading) and exercise types based on the learner's current level, weak patterns, and due reviews. Triggered only when the learner types /fluent-learn. Greets the learner, shows today's plan, asks what to practice, runs interleaved exercises one at a time, and updates all databases at the end.
-allowed-tools: Read, Write, Bash
+allowed-tools: read_file write_file bash
 disable-model-invocation: true
 ---
 
@@ -24,13 +24,13 @@ Skip this skill the very first time a learner runs the system — route to `/flu
 First, pull the latest progress (clone mode — a session on another device may have advanced the databases):
 
 ```bash
-git -C "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}" pull --rebase --autostash 2>/dev/null || true
+git pull --rebase --autostash 2>/dev/null || true
 ```
 
 Then load the databases:
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/read-db.py"
+python3 "hooks/read-db.py"
 ```
 
 Need all 6 DBs. If any missing, direct the learner to `/fluent-setup` and stop.

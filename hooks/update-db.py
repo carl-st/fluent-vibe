@@ -4,7 +4,7 @@ Fluent DB Update Script
 Updates all 6 learning databases from a single JSON session report via stdin.
 
 Usage:
-    python3 .claude/hooks/update-db.py <<'EOF'
+    python3 hooks/update-db.py <<'EOF'
     { "session_id": "session-005", "date": "2026-04-24", ... }
     EOF
 

@@ -1,6 +1,6 @@
 # AI Guide: Dutch Writing Practice Methodology
 
-**Purpose:** This document instructs Claude AI on how to analyze practice session results, track student progress, and deliver adaptive lessons for A2 Dutch writing exam preparation.
+**Purpose:** This document instructs the AI tutor on how to analyze practice session results, track student progress, and deliver adaptive lessons for A2 Dutch writing exam preparation.
 
 ---
 

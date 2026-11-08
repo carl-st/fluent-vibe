@@ -1,0 +1,13 @@
+# Mistral Vibe project hooks — loaded when this folder is trusted.
+# Wired to the Vibe hook lifecycle; there is no session-start/end event, the
+# session skills handle greetings, stats, backups, and git sync themselves.
+
+# Validate learner JSON and keep timestamped backups after every
+# write_file / edit that touches a data file.
+[[hooks]]
+name = "fluent-validate-data"
+type = "post_tool"
+match = "re:write_file|edit"
+command = "python3 hooks/validate-data.py"
+timeout = 10.0
+description = "Validate learner JSON and back up data files after modifications"

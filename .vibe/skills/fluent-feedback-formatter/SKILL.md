@@ -76,7 +76,7 @@ After scoring, feed the score into the SM-2 update via the `fluent-sm2-calculato
 
 ## Examples
 
-See `.claude/references/feedback-template.md` for fully-rendered examples (mostly-correct answer with a minor slip; critical error with severity tagging). The reference file is the authoritative version — keep it and this skill in sync if updating.
+See `feedback-template.md` for fully-rendered examples (mostly-correct answer with a minor slip; critical error with severity tagging). The reference file is the authoritative version — keep it and this skill in sync if updating.
 
 Quick pattern:
 

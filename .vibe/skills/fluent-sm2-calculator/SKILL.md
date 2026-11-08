@@ -98,10 +98,10 @@ If the learner got it wrong (quality < 3), keep the item in `review_queue.today`
 
 ### 7. Preferred implementation
 
-Do not hand-edit `spaced-repetition.json`. Call `.claude/hooks/update-db.py` with a `review_results` array — the script runs SM-2 atomically and rebuilds the queue. Only do manual math when the script is unavailable. See the `fluent-db-updater` skill for the payload schema.
+Do not hand-edit `spaced-repetition.json`. Call `hooks/update-db.py` with a `review_results` array — the script runs SM-2 atomically and rebuilds the queue. Only do manual math when the script is unavailable. See the `fluent-db-updater` skill for the payload schema.
 
 ```bash
-python3 "${CLAUDE_PLUGIN_ROOT:-${CLAUDE_PROJECT_DIR:-.}}/.claude/hooks/update-db.py" <<'EOF'
+python3 "hooks/update-db.py" <<'EOF'
 {
   "session_id": "session-NNN",
   "date": "YYYY-MM-DD",
@@ -114,7 +114,7 @@ EOF
 
 ## Examples
 
-See `.claude/references/sm2-worked-examples.md` for 4 worked examples covering: correct answer (regular case), wrong answer (reset + EF drop), 5th consecutive correct (mastery bump), 3rd consecutive wrong (mastery drop). Each example shows the full before/after state.
+See `worked-examples.md` for 4 worked examples covering: correct answer (regular case), wrong answer (reset + EF drop), 5th consecutive correct (mastery bump), 3rd consecutive wrong (mastery drop). Each example shows the full before/after state.
 
 Quick version:
 
