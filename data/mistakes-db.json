@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-08",
-    "total_patterns_tracked": 3,
+    "last_updated": "2026-11-09",
+    "total_patterns_tracked": 4,
     "language": "Korean"
   },
   "error_patterns": {
@@ -56,20 +56,49 @@
       "subcategory": "",
       "description": "",
       "severity": "minor",
-      "frequency": 1,
+      "frequency": 2,
       "mastery_level": 0,
       "difficulty_score": 0.5,
-      "last_seen": "2026-11-08",
-      "last_occurred": "2026-11-08",
-      "next_review": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "last_occurred": "2026-11-09",
+      "next_review": "2026-11-10",
       "consecutive_correct": 0,
-      "consecutive_incorrect": 1,
+      "consecutive_incorrect": 2,
       "examples": [
         {
           "incorrect": "저니요",
           "correct": "저기요 (ㄱ not ㄴ)",
           "context": "confusing ㄱ and ㄴ initials",
           "date": "2026-11-08"
+        },
+        {
+          "incorrect": "저니요",
+          "correct": "저기요",
+          "context": "ㄱ vs ㄴ initial consonant in 저기요",
+          "date": "2026-11-09"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_batchim_l_omission": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-09",
+      "last_occurred": "2026-11-09",
+      "next_review": "2026-11-10",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "몰",
+          "correct": "물",
+          "context": "missing final consonant (batchim) ㄹ in 물",
+          "date": "2026-11-09"
         }
       ],
       "notes": ""

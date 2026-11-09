@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 1
+    "total_sessions": 2
   },
   "sessions": [
     {
@@ -34,6 +34,42 @@
       "notes": "Intro session after /fluent-setup. 10 travel vocabulary items, all answered correctly on final attempt. A1 start confirmed.",
       "achievements_earned": [],
       "streak_day": 0
+    },
+    {
+      "session_id": "session-002",
+      "date": "2026-11-09",
+      "duration_minutes": 15,
+      "skills_practiced": [
+        "vocabulary",
+        "writing"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 10,
+      "accuracy": 0.8,
+      "score_breakdown": {
+        "vocabulary": 0.889,
+        "writing": 0.0
+      },
+      "topics_covered": [
+        "hangeul vowel discrimination",
+        "hangeul consonant discrimination",
+        "batchim (final consonants)",
+        "ordering at a restaurant",
+        "travel phrases"
+      ],
+      "breakthroughs": [
+        "ㅏ vs ㅓ vowel discrimination mastered — first error-free performance on top weak pattern",
+        "Composed first full Korean sentence: 저기요, 물 주세요",
+        "ㅖ/ㅔ vowel pattern (얼마예요) answered correctly"
+      ],
+      "focus_next_session": [
+        "Batchim (final consonants) — drill ㄹ, ㄴ, ㅁ endings",
+        "More restaurant phrases: menu, ordering food",
+        "Review 저기요 (ㄱ/ㄴ) — still shaky"
+      ],
+      "notes": "Adaptive mix session. Warm-up 3/3, drill 1 (ㅏ/ㅓ) perfect including production of 아니요 감사합니다, drill 2 mostly correct (얼마예요) but 저니요 regression on ㄱ/ㄴ. Integration sentence structure perfect, 물 misspelled as 몰, corrected via retype. 8/10 = 80% accuracy.",
+      "achievements_earned": [],
+      "streak_day": 1
     }
   ],
   "milestones": [
@@ -41,6 +77,11 @@
       "date": "2026-11-08",
       "milestone": "Completed first lesson: 10 travel words in Korean",
       "session_id": "session-001"
+    },
+    {
+      "date": "2026-11-09",
+      "milestone": "Composed first full Korean sentence (저기요, 물 주세요)",
+      "session_id": "session-002"
     }
   ]
 }

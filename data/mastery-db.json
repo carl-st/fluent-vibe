@@ -1,14 +1,16 @@
 {
   "metadata": {
-    "last_updated": "2026-11-08",
+    "last_updated": "2026-11-09",
     "language": "Korean"
   },
   "skills": {
     "writing": {
-      "mastery_level": 0,
+      "mastery_level": 1,
       "confidence_score": 0.0,
-      "total_practice_time": 0,
-      "last_practiced": null
+      "total_practice_time": 4,
+      "last_practiced": "2026-11-09",
+      "practice_count": 1,
+      "avg_accuracy": 0.0
     },
     "speaking": {
       "mastery_level": 0,
@@ -18,11 +20,11 @@
     },
     "vocabulary": {
       "mastery_level": 1,
-      "confidence_score": 1.0,
-      "total_practice_time": 8,
-      "last_practiced": "2026-11-08",
-      "practice_count": 10,
-      "avg_accuracy": 1.0
+      "confidence_score": 0.944,
+      "total_practice_time": 19,
+      "last_practiced": "2026-11-09",
+      "practice_count": 19,
+      "avg_accuracy": 0.944
     },
     "reading": {
       "mastery_level": 0,

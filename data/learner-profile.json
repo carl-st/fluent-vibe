@@ -16,16 +16,16 @@
     "timeline_months": 6
   },
   "profile_created": "2026-11-08",
-  "last_updated": "2026-11-08",
-  "current_streak_days": 0,
-  "total_sessions": 1,
-  "total_study_minutes": 8,
+  "last_updated": "2026-11-09",
+  "current_streak_days": 1,
+  "total_sessions": 2,
+  "total_study_minutes": 23,
   "skills": {
     "writing": {
-      "current_level": 0,
+      "current_level": 1,
       "confidence": 0,
-      "last_practiced": null,
-      "total_practice_time": 0
+      "last_practiced": "2026-11-09",
+      "total_practice_time": 4
     },
     "speaking": {
       "current_level": 0,
@@ -35,9 +35,9 @@
     },
     "vocabulary": {
       "current_level": 1,
-      "confidence": 30,
-      "last_practiced": "2026-11-08",
-      "total_practice_time": 8
+      "confidence": 48,
+      "last_practiced": "2026-11-09",
+      "total_practice_time": 19
     },
     "reading": {
       "current_level": 0,
@@ -69,6 +69,12 @@
       "name": "Completed first lesson: 10 travel words in Korean",
       "earned_date": "2026-11-08",
       "description": "Completed first lesson: 10 travel words in Korean"
+    },
+    {
+      "id": "session_session-002_0_composed_first_full_korean_sen",
+      "name": "Composed first full Korean sentence (저기요, 물 주세요)",
+      "earned_date": "2026-11-09",
+      "description": "Composed first full Korean sentence (저기요, 물 주세요)"
     }
   ],
   "preferences": {
