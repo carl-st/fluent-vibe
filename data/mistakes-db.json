@@ -1,7 +1,7 @@
 {
   "metadata": {
     "last_updated": "2026-11-09",
-    "total_patterns_tracked": 4,
+    "total_patterns_tracked": 5,
     "language": "Korean"
   },
   "error_patterns": {
@@ -98,6 +98,29 @@
           "incorrect": "몰",
           "correct": "물",
           "context": "missing final consonant (batchim) ㄹ in 물",
+          "date": "2026-11-09"
+        }
+      ],
+      "notes": ""
+    },
+    "particle_irang_omission": {
+      "category": "grammar",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-09",
+      "last_occurred": "2026-11-09",
+      "next_review": "2026-11-10",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "밥란 물 주세요",
+          "correct": "밥이랑 물 주세요",
+          "context": "connecting particle -이랑 (and/with) after consonant-final noun",
           "date": "2026-11-09"
         }
       ],

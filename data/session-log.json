@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 2
+    "total_sessions": 3
   },
   "sessions": [
     {
@@ -70,6 +70,43 @@
       "notes": "Adaptive mix session. Warm-up 3/3, drill 1 (ㅏ/ㅓ) perfect including production of 아니요 감사합니다, drill 2 mostly correct (얼마예요) but 저니요 regression on ㄱ/ㄴ. Integration sentence structure perfect, 물 misspelled as 몰, corrected via retype. 8/10 = 80% accuracy.",
       "achievements_earned": [],
       "streak_day": 1
+    },
+    {
+      "session_id": "session-003",
+      "date": "2026-11-09",
+      "duration_minutes": 13,
+      "skills_practiced": [
+        "vocabulary",
+        "writing"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 9,
+      "accuracy": 0.778,
+      "score_breakdown": {
+        "vocabulary": 0.857,
+        "writing": 0.5
+      },
+      "topics_covered": [
+        "batchim (final consonants)",
+        "ㄱ/ㄴ consonant discrimination",
+        "restaurant phrases",
+        "connecting particles (-이랑)",
+        "loanwords"
+      ],
+      "breakthroughs": [
+        "Batchim mastered — 물, 밥, 밤 all discriminated correctly",
+        "ㄱ/ㄴ pattern fixed — 저기요 and 감사합니다 both correct after prior misses",
+        "First multi-sentence restaurant dialogue composed (3 sentences)"
+      ],
+      "focus_next_session": [
+        "Connecting particles -이랑/-하고",
+        "Numbers and prices (for 얼마예요)",
+        "Consider a speaking session — still unpracticed",
+        "Review 모르겠어요 — missed recognition this session"
+      ],
+      "notes": "Second session of the day (adaptive mix). Batchim drill excellent (물/밥/밤 all correct). ㄱ/ㄴ regression fixed. Integration dialogue 2/3 sentences perfect; 밥란 instead of 밥이랑 (particle omission), corrected via retype. 모르겠어요 recognition missed (chose 'I know'), retyped correctly.",
+      "achievements_earned": [],
+      "streak_day": 1
     }
   ],
   "milestones": [
@@ -82,6 +119,11 @@
       "date": "2026-11-09",
       "milestone": "Composed first full Korean sentence (저기요, 물 주세요)",
       "session_id": "session-002"
+    },
+    {
+      "date": "2026-11-09",
+      "milestone": "First multi-sentence restaurant dialogue (저기요! 밥이랑 물 주세요. 맛있어요)",
+      "session_id": "session-003"
     }
   ]
 }
