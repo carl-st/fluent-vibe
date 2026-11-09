@@ -4,11 +4,12 @@
 
 **The AI Language Learning Kit for Mistral Vibe**
 
+This is a fork of [fluent by m98](https://github.com/m98/fluent)
+
 *A comprehensive set of rules, guidance, and intelligent tracking systems that transform Mistral Vibe into your personal language tutor. Master any language through adaptive practice powered by proven cognitive science—spaced repetition, active recall, and progress tracking that learns from you.*
 
 
 ---
-
 
 
 ## 🚀 Quick Start
@@ -18,8 +19,8 @@ Fluent lives inside the repository: clone it, trust the folder, and the skills a
 ### 1. Install
 
 ```bash
-git clone https://github.com/carl-st/fluent-korean.git
-cd fluent-korean
+git clone https://github.com/carl-st/fluent-vibe.git
+cd fluent-vibe
 uv tool install mistral-vibe   # if Vibe is not installed yet
 vibe                           # launch from the repo root, trust the folder when prompted
 ```
@@ -110,7 +111,7 @@ The system uses **evidence-based learning methodologies** including:
 
 ### ✨ Key Features
 
-- 🎯 **Multi-Language Support** - Learn any language (French, Spanish, German, Japanese, Korean, Arabic, Dutch, etc.)
+- 🎯 **Multi-Language Support** - Learn any language (French, Spanish, German, Japanese, vibe, Arabic, Dutch, etc.)
 - 📊 **Comprehensive Tracking** - Automatic progress monitoring with detailed statistics
 - 🧠 **Spaced Repetition** - SM-2 algorithm schedules reviews just before you forget
 - 🎮 **Gamification** - Streaks, achievements, mastery levels (0-5 stars)
@@ -352,39 +353,9 @@ See [`hooks/README.md`](hooks/README.md) for technical details.
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### Priority Areas
-
-We're especially interested in:
-
-1. 🌐 **Language-specific optimizations** - Grammar rules, common errors for specific languages
-2. 🎵 **Audio features** - Pronunciation practice, listening exercises
-3. 📊 **Visual enhancements** - Better progress charts, statistics
-4. 📱 **Mobile support** - Companion app or mobile interface
-5. ⚡ **Performance** - Optimize data loading, improve speed
-6. ♿ **Accessibility** - Make system more accessible
-7. 🧪 **Testing** - Add comprehensive test coverage
-
-### How to Contribute
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Test thoroughly
-5. Commit with clear messages
-6. Push and open a Pull Request
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 
 ---
 
@@ -402,16 +373,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support & Community
 
 - 📖 **Documentation:** [Full docs in this repo](docs/)
-- 🐛 **Bug Reports & Questions:** [GitHub Issues](https://github.com/m98/fluent/issues)
-- 📧 **Email:** For sensitive issues
-
----
-
-## 🌟 Star This Project!
-
-If this system helps you learn a language, please **star the repository** ⭐
-
-It helps others discover this project and motivates us to keep improving it!
 
 ---
 
@@ -427,11 +388,6 @@ It helps others discover this project and motivates us to keep improving it!
 
 ---
 
-## 🎓 Success Stories
-
-*Want to share your language learning success? Open a PR to add your story here!*
-
----
 
 ## 🛠️ Troubleshooting
 
@@ -495,8 +451,8 @@ results here.
 *Start your language learning journey today!* 🚀
 
 ```bash
-git clone https://github.com/carl-st/fluent-korean.git
-cd fluent-korean
+git clone https://github.com/carl-st/fluent-vibe.git
+cd fluent-vibe
 vibe
 /fluent-setup
 ```
