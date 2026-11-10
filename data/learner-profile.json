@@ -16,16 +16,16 @@
     "timeline_months": 6
   },
   "profile_created": "2026-11-08",
-  "last_updated": "2026-11-09",
-  "current_streak_days": 1,
-  "total_sessions": 3,
-  "total_study_minutes": 36,
+  "last_updated": "2026-11-10",
+  "current_streak_days": 2,
+  "total_sessions": 4,
+  "total_study_minutes": 54,
   "skills": {
     "writing": {
       "current_level": 1,
-      "confidence": 15,
-      "last_practiced": "2026-11-09",
-      "total_practice_time": 9
+      "confidence": 30,
+      "last_practiced": "2026-11-10",
+      "total_practice_time": 16
     },
     "speaking": {
       "current_level": 0,
@@ -35,9 +35,9 @@
     },
     "vocabulary": {
       "current_level": 1,
-      "confidence": 59,
-      "last_practiced": "2026-11-09",
-      "total_practice_time": 27
+      "confidence": 69,
+      "last_practiced": "2026-11-10",
+      "total_practice_time": 38
     },
     "reading": {
       "current_level": 0,
@@ -81,6 +81,12 @@
       "name": "First multi-sentence restaurant dialogue (저기요! 밥이랑 물 주세요. 맛있어요)",
       "earned_date": "2026-11-09",
       "description": "First multi-sentence restaurant dialogue (저기요! 밥이랑 물 주세요. 맛있어요)"
+    },
+    {
+      "id": "session_session-004_0_first_complete_market_transact",
+      "name": "First complete market transaction dialogue (이거 얼마예요? 네, 이거 주세요)",
+      "earned_date": "2026-11-10",
+      "description": "First complete market transaction dialogue (이거 얼마예요? 네, 이거 주세요)"
     }
   ],
   "preferences": {

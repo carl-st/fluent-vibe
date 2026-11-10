@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-09",
-    "total_patterns_tracked": 5,
+    "last_updated": "2026-11-10",
+    "total_patterns_tracked": 7,
     "language": "Korean"
   },
   "error_patterns": {
@@ -122,6 +122,52 @@
           "correct": "밥이랑 물 주세요",
           "context": "connecting particle -이랑 (and/with) after consonant-final noun",
           "date": "2026-11-09"
+        }
+      ],
+      "notes": ""
+    },
+    "ending_juseyo_omission": {
+      "category": "grammar",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-10",
+      "last_occurred": "2026-11-10",
+      "next_review": "2026-11-11",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "커피하고 밥",
+          "correct": "커피하고 밥 주세요",
+          "context": "omitted 주세요 ending in an order",
+          "date": "2026-11-10"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_vowel_o_vs_u": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-10",
+      "last_occurred": "2026-11-10",
+      "next_review": "2026-11-11",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "커피하구 밥 주세요",
+          "correct": "커피하고 밥 주세요",
+          "context": "ㅗ (o) vs ㅜ (u) vowel confusion in 하고",
+          "date": "2026-11-10"
         }
       ],
       "notes": ""

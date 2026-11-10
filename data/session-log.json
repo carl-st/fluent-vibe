@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 3
+    "total_sessions": 4
   },
   "sessions": [
     {
@@ -107,6 +107,44 @@
       "notes": "Second session of the day (adaptive mix). Batchim drill excellent (물/밥/밤 all correct). ㄱ/ㄴ regression fixed. Integration dialogue 2/3 sentences perfect; 밥란 instead of 밥이랑 (particle omission), corrected via retype. 모르겠어요 recognition missed (chose 'I know'), retyped correctly.",
       "achievements_earned": [],
       "streak_day": 1
+    },
+    {
+      "session_id": "session-004",
+      "date": "2026-11-10",
+      "duration_minutes": 18,
+      "skills_practiced": [
+        "vocabulary",
+        "writing"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 18,
+      "accuracy": 0.889,
+      "score_breakdown": {
+        "vocabulary": 0.933,
+        "writing": 0.667
+      },
+      "topics_covered": [
+        "spaced review (12 items)",
+        "connecting particles -이랑/-랑/-하고",
+        "Sino-Korean numbers and prices (천, 원)",
+        "market transactions",
+        "ㅗ/ㅜ vowel discrimination"
+      ],
+      "breakthroughs": [
+        "Cleared entire review queue 12/12 with perfect recall",
+        "Particle rule generalized independently: 커피랑 물 (vowel-final + 랑)",
+        "First complete market transaction dialogue: 이거 얼마예요? → 네, 이거 주세요",
+        "모르겠어요 corrected from yesterday's miss"
+      ],
+      "focus_next_session": [
+        "Korean number system: 만/천/백/십 grouping by ten-thousands",
+        "ㅗ vs ㅜ vowel discrimination (new pattern)",
+        "Speaking practice — still unpracticed",
+        "Review 밤 and 메뉴 — not tested this session"
+      ],
+      "notes": "Adaptive mix. Warm-up: 12/12 review items perfect including revenge on 모르겠어요. Particle drill strong — generalized -랑 rule to vowel-final nouns independently. Two new minor errors: omitted 주세요 (fixed via retype), ㅗ/ㅜ confusion in 하고 (fixed via retype). Price drill: 삼천 원 missed (chose 300), 오천 원 correct. Integration dialogue flawless both turns.",
+      "achievements_earned": [],
+      "streak_day": 2
     }
   ],
   "milestones": [
@@ -124,6 +162,11 @@
       "date": "2026-11-09",
       "milestone": "First multi-sentence restaurant dialogue (저기요! 밥이랑 물 주세요. 맛있어요)",
       "session_id": "session-003"
+    },
+    {
+      "date": "2026-11-10",
+      "milestone": "First complete market transaction dialogue (이거 얼마예요? 네, 이거 주세요)",
+      "session_id": "session-004"
     }
   ]
 }
