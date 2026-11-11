@@ -16,16 +16,16 @@
     "timeline_months": 6
   },
   "profile_created": "2026-11-08",
-  "last_updated": "2026-11-10",
-  "current_streak_days": 2,
-  "total_sessions": 4,
-  "total_study_minutes": 54,
+  "last_updated": "2026-11-11",
+  "current_streak_days": 3,
+  "total_sessions": 5,
+  "total_study_minutes": 69,
   "skills": {
     "writing": {
       "current_level": 1,
-      "confidence": 30,
-      "last_practiced": "2026-11-10",
-      "total_practice_time": 16
+      "confidence": 41,
+      "last_practiced": "2026-11-11",
+      "total_practice_time": 24
     },
     "speaking": {
       "current_level": 0,
@@ -35,9 +35,9 @@
     },
     "vocabulary": {
       "current_level": 1,
-      "confidence": 69,
-      "last_practiced": "2026-11-10",
-      "total_practice_time": 38
+      "confidence": 73,
+      "last_practiced": "2026-11-11",
+      "total_practice_time": 45
     },
     "reading": {
       "current_level": 0,

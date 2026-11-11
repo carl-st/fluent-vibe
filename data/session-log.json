@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 4
+    "total_sessions": 5
   },
   "sessions": [
     {
@@ -145,6 +145,43 @@
       "notes": "Adaptive mix. Warm-up: 12/12 review items perfect including revenge on 모르겠어요. Particle drill strong — generalized -랑 rule to vowel-final nouns independently. Two new minor errors: omitted 주세요 (fixed via retype), ㅗ/ㅜ confusion in 하고 (fixed via retype). Price drill: 삼천 원 missed (chose 300), 오천 원 correct. Integration dialogue flawless both turns.",
       "achievements_earned": [],
       "streak_day": 2
+    },
+    {
+      "session_id": "session-005",
+      "date": "2026-11-11",
+      "duration_minutes": 15,
+      "skills_practiced": [
+        "vocabulary",
+        "writing"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 9,
+      "accuracy": 0.778,
+      "score_breakdown": {
+        "vocabulary": 0.833,
+        "writing": 0.667
+      },
+      "topics_covered": [
+        "spaced review (9 items answered)",
+        "ㅗ vs ㅜ vowel discrimination",
+        "Sino-Korean numbers: 만/천 for prices",
+        "market transaction dialogue (integrated writing)"
+      ],
+      "breakthroughs": [
+        "모르겠어요 now automatic after 3 sessions of spaced review",
+        "얼마예요 rebuilt via in-session retype after spelling collapse",
+        "Learned the invisible-만 rule: 12,000 = 만이천 원",
+        "Third flawless multi-sentence market dialogue (저기요! 이거 얼마예요? 커피랑 물 주세요)"
+      ],
+      "focus_next_session": [
+        "Speaking practice — still unpracticed, mastery 0 (focus area: travel_korean)",
+        "Number production drill: 만이천/사만오천 combos, add 백/십",
+        "Batchim ㄹ review — second occurrence of dropping it (몰→물, 어라→얼마)",
+        "Reviews due: 밤, 메뉴, 밥 (not tested today) + tomorrow's queue"
+      ],
+      "notes": "Adaptive mix. Warm-up and ㅗ/ㅜ drill flawless (aeva session-era o_vs_u confusion appears fixed). Numbers recognition strong (오천, 이만) but production of 12,000 failed digit-by-digit; fixed by retype. 얼마 spelling collapsed (어라예요), fixed by retype. Integration dialogue perfect: particles, 주세요, polite endings all intact. 7/9 exercises first-try correct (78%), 86% by points. Both errors repaired via retype. Streak day 3.",
+      "achievements_earned": [],
+      "streak_day": 3
     }
   ],
   "milestones": [

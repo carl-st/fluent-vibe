@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-10",
-    "total_patterns_tracked": 7,
+    "last_updated": "2026-11-11",
+    "total_patterns_tracked": 8,
     "language": "Korean"
   },
   "error_patterns": {
@@ -85,20 +85,26 @@
       "subcategory": "",
       "description": "",
       "severity": "minor",
-      "frequency": 1,
+      "frequency": 2,
       "mastery_level": 0,
       "difficulty_score": 0.5,
-      "last_seen": "2026-11-09",
-      "last_occurred": "2026-11-09",
-      "next_review": "2026-11-10",
+      "last_seen": "2026-11-11",
+      "last_occurred": "2026-11-11",
+      "next_review": "2026-11-12",
       "consecutive_correct": 0,
-      "consecutive_incorrect": 1,
+      "consecutive_incorrect": 2,
       "examples": [
         {
           "incorrect": "몰",
           "correct": "물",
           "context": "missing final consonant (batchim) ㄹ in 물",
           "date": "2026-11-09"
+        },
+        {
+          "incorrect": "어라예요",
+          "correct": "얼마예요",
+          "context": "batchim ㄹ dropped and ㄹ/ㅁ batchim swapped in 얼마예요",
+          "date": "2026-11-11"
         }
       ],
       "notes": ""
@@ -168,6 +174,29 @@
           "correct": "커피하고 밥 주세요",
           "context": "ㅗ (o) vs ㅜ (u) vowel confusion in 하고",
           "date": "2026-11-10"
+        }
+      ],
+      "notes": ""
+    },
+    "sino_number_ten_thousands": {
+      "category": "vocabulary",
+      "subcategory": "",
+      "description": "",
+      "severity": "critical",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-11",
+      "last_occurred": "2026-11-11",
+      "next_review": "2026-11-12",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "일이 만 원",
+          "correct": "만이천 원",
+          "context": "12,000원 read digit-by-digit; Korean groups by ten-thousands and never writes the leading 1 before 만",
+          "date": "2026-11-11"
         }
       ],
       "notes": ""
