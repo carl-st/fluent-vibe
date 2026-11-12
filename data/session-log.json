@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 5
+    "total_sessions": 6
   },
   "sessions": [
     {
@@ -182,6 +182,44 @@
       "notes": "Adaptive mix. Warm-up and ㅗ/ㅜ drill flawless (aeva session-era o_vs_u confusion appears fixed). Numbers recognition strong (오천, 이만) but production of 12,000 failed digit-by-digit; fixed by retype. 얼마 spelling collapsed (어라예요), fixed by retype. Integration dialogue perfect: particles, 주세요, polite endings all intact. 7/9 exercises first-try correct (78%), 86% by points. Both errors repaired via retype. Streak day 3.",
       "achievements_earned": [],
       "streak_day": 3
+    },
+    {
+      "session_id": "session-006",
+      "date": "2026-11-12",
+      "duration_minutes": 15,
+      "skills_practiced": [
+        "vocabulary",
+        "writing"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 10,
+      "accuracy": 0.8,
+      "score_breakdown": {
+        "vocabulary": 1.0,
+        "writing": 0.5
+      },
+      "topics_covered": [
+        "spaced review (3 items)",
+        "Sino-Korean numbers 만/천/십만",
+        "batchim discrimination (밤/방/반)",
+        "café transactions",
+        "ㅔ/ㅐ/ㅏ vowel discrimination"
+      ],
+      "breakthroughs": [
+        "Number system breakthrough: 사만 (40,000) and 십만 (100,000) both correct — critical pattern resolved",
+        "얼마예요 batchim regression fixed (correct ㄹ after yesterday's 어라마예요)",
+        "First café transaction completed: 커피 얼마예요? → 네, 주세요",
+        "밤/방/반 three-way batchim discrimination all correct"
+      ],
+      "focus_next_session": [
+        "ㅔ/ㅐ/ㅏ vowel discrimination — new top priority (세요, 네)",
+        "ㅊ vs ㅈ consonants (천/전)",
+        "Speaking practice — still unpracticed",
+        "More number practice: 백만, complex prices"
+      ],
+      "notes": "Adaptive mix. Warm-up 3/3. Number drill strong: 사만/십만 correct, complex price 삼천오백 had ㅊ/ㅈ slip and omitted 원 — fixed via retype. Batchim excellent: 얼마예요 correct (regression fixed), 밤/방/반 discriminated. Café dialogue mostly fluent; final reply 네, 주세요 had ㅐ/ㅔ and ㅔ/ㅏ vowel errors — fixed via retype. New vowel pattern flagged moderate.",
+      "achievements_earned": [],
+      "streak_day": 4
     }
   ],
   "milestones": [
@@ -204,6 +242,11 @@
       "date": "2026-11-10",
       "milestone": "First complete market transaction dialogue (이거 얼마예요? 네, 이거 주세요)",
       "session_id": "session-004"
+    },
+    {
+      "date": "2026-11-12",
+      "milestone": "First café transaction dialogue (커피 얼마예요? 네, 주세요)",
+      "session_id": "session-006"
     }
   ]
 }

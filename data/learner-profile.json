@@ -16,16 +16,16 @@
     "timeline_months": 6
   },
   "profile_created": "2026-11-08",
-  "last_updated": "2026-11-11",
-  "current_streak_days": 3,
-  "total_sessions": 5,
-  "total_study_minutes": 69,
+  "last_updated": "2026-11-12",
+  "current_streak_days": 4,
+  "total_sessions": 6,
+  "total_study_minutes": 84,
   "skills": {
     "writing": {
       "current_level": 1,
-      "confidence": 41,
-      "last_practiced": "2026-11-11",
-      "total_practice_time": 24
+      "confidence": 44,
+      "last_practiced": "2026-11-12",
+      "total_practice_time": 31
     },
     "speaking": {
       "current_level": 0,
@@ -35,9 +35,9 @@
     },
     "vocabulary": {
       "current_level": 1,
-      "confidence": 73,
-      "last_practiced": "2026-11-11",
-      "total_practice_time": 45
+      "confidence": 81,
+      "last_practiced": "2026-11-12",
+      "total_practice_time": 53
     },
     "reading": {
       "current_level": 0,
@@ -87,6 +87,12 @@
       "name": "First complete market transaction dialogue (이거 얼마예요? 네, 이거 주세요)",
       "earned_date": "2026-11-10",
       "description": "First complete market transaction dialogue (이거 얼마예요? 네, 이거 주세요)"
+    },
+    {
+      "id": "session_session-006_0_first_caf_transaction_dialogu",
+      "name": "First café transaction dialogue (커피 얼마예요? 네, 주세요)",
+      "earned_date": "2026-11-12",
+      "description": "First café transaction dialogue (커피 얼마예요? 네, 주세요)"
     }
   ],
   "preferences": {

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-11",
-    "total_patterns_tracked": 8,
+    "last_updated": "2026-11-12",
+    "total_patterns_tracked": 10,
     "language": "Korean"
   },
   "error_patterns": {
@@ -197,6 +197,52 @@
           "correct": "만이천 원",
           "context": "12,000원 read digit-by-digit; Korean groups by ten-thousands and never writes the leading 1 before 만",
           "date": "2026-11-11"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_consonant_ch_vs_j": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-12",
+      "last_occurred": "2026-11-12",
+      "next_review": "2026-11-13",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "삼전오백",
+          "correct": "삼천오백 원",
+          "context": "ㅊ (ch) vs ㅈ (j) in 천 (1,000); also omitted 원",
+          "date": "2026-11-12"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_vowel_e_a_confusion": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-12",
+      "last_occurred": "2026-11-12",
+      "next_review": "2026-11-13",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "내, 주사요",
+          "correct": "네, 주세요",
+          "context": "ㅐ/ㅔ confusion (내→네 'my'→'yes') and ㅔ/ㅏ in 세요→사요",
+          "date": "2026-11-12"
         }
       ],
       "notes": ""
