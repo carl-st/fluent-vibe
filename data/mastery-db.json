@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-11-12",
+    "last_updated": "2026-11-13",
     "language": "Korean"
   },
   "skills": {
@@ -20,11 +20,11 @@
     },
     "vocabulary": {
       "mastery_level": 3,
-      "confidence_score": 0.919,
-      "total_practice_time": 53,
-      "last_practiced": "2026-11-12",
-      "practice_count": 53,
-      "avg_accuracy": 0.919
+      "confidence_score": 0.895,
+      "total_practice_time": 63,
+      "last_practiced": "2026-11-13",
+      "practice_count": 61,
+      "avg_accuracy": 0.895
     },
     "reading": {
       "mastery_level": 0,

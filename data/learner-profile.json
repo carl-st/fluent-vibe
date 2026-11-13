@@ -16,10 +16,10 @@
     "timeline_months": 6
   },
   "profile_created": "2026-11-08",
-  "last_updated": "2026-11-12",
-  "current_streak_days": 4,
-  "total_sessions": 6,
-  "total_study_minutes": 84,
+  "last_updated": "2026-11-13",
+  "current_streak_days": 5,
+  "total_sessions": 7,
+  "total_study_minutes": 94,
   "skills": {
     "writing": {
       "current_level": 1,
@@ -35,9 +35,9 @@
     },
     "vocabulary": {
       "current_level": 1,
-      "confidence": 81,
-      "last_practiced": "2026-11-12",
-      "total_practice_time": 53
+      "confidence": 79,
+      "last_practiced": "2026-11-13",
+      "total_practice_time": 63
     },
     "reading": {
       "current_level": 0,
@@ -93,6 +93,12 @@
       "name": "First café transaction dialogue (커피 얼마예요? 네, 주세요)",
       "earned_date": "2026-11-12",
       "description": "First café transaction dialogue (커피 얼마예요? 네, 주세요)"
+    },
+    {
+      "id": "session_session-007_0_first_word_inferred_from_conte",
+      "name": "First word inferred from context without being taught (비싸요)",
+      "earned_date": "2026-11-13",
+      "description": "First word inferred from context without being taught (비싸요)"
     }
   ],
   "preferences": {

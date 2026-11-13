@@ -1,17 +1,17 @@
 {
   "metadata": {
-    "last_updated": "2026-11-12",
+    "last_updated": "2026-11-13",
     "language": "Korean",
     "tracking_started": "2026-11-08"
   },
   "overall_stats": {
-    "total_sessions": 6,
-    "total_exercises": 66,
-    "total_correct": 56,
-    "total_incorrect": 10,
-    "accuracy_rate": 0.848,
-    "total_study_minutes": 84,
-    "average_session_duration": 14
+    "total_sessions": 7,
+    "total_exercises": 74,
+    "total_correct": 62,
+    "total_incorrect": 12,
+    "accuracy_rate": 0.838,
+    "total_study_minutes": 94,
+    "average_session_duration": 13
   },
   "accuracy_trend": [
     {
@@ -38,6 +38,11 @@
       "date": "2026-11-12",
       "accuracy": 0.8,
       "exercises": 10
+    },
+    {
+      "date": "2026-11-13",
+      "accuracy": 0.75,
+      "exercises": 8
     }
   ],
   "skill_progress": {
@@ -55,12 +60,12 @@
       "last_practiced": null
     },
     "vocabulary": {
-      "sessions": 6,
-      "accuracy": 0.919,
-      "last_practiced": "2026-11-12",
-      "exercises_completed": 53,
-      "correct_count": 49,
-      "incorrect_count": 4
+      "sessions": 7,
+      "accuracy": 0.895,
+      "last_practiced": "2026-11-13",
+      "exercises_completed": 61,
+      "correct_count": 55,
+      "incorrect_count": 6
     },
     "reading": {
       "sessions": 0,
@@ -82,9 +87,9 @@
     },
     {
       "week_start": "2026-11-09",
-      "sessions": 5,
-      "total_minutes": 76,
-      "accuracy": 0.809
+      "sessions": 6,
+      "total_minutes": 86,
+      "accuracy": 0.799
     }
   ]
 }

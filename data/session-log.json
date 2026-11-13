@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 6
+    "total_sessions": 7
   },
   "sessions": [
     {
@@ -220,6 +220,40 @@
       "notes": "Adaptive mix. Warm-up 3/3. Number drill strong: 사만/십만 correct, complex price 삼천오백 had ㅊ/ㅈ slip and omitted 원 — fixed via retype. Batchim excellent: 얼마예요 correct (regression fixed), 밤/방/반 discriminated. Café dialogue mostly fluent; final reply 네, 주세요 had ㅐ/ㅔ and ㅔ/ㅏ vowel errors — fixed via retype. New vowel pattern flagged moderate.",
       "achievements_earned": [],
       "streak_day": 4
+    },
+    {
+      "session_id": "session-007",
+      "date": "2026-11-13",
+      "duration_minutes": 10,
+      "skills_practiced": [
+        "vocabulary"
+      ],
+      "command_used": "/fluent-vocab",
+      "exercises_completed": 8,
+      "accuracy": 0.75,
+      "score_breakdown": {
+        "vocabulary": 0.75
+      },
+      "topics_covered": [
+        "travel vocabulary",
+        "transport",
+        "prices",
+        "particles review",
+        "ㅐ/ㅔ vowels"
+      ],
+      "breakthroughs": [
+        "ㅐ/ㅔ vowel pattern fixed — 네 correct with ㅔ after Tuesday's 내 slip",
+        "All 5 due vocabulary items recalled at 10/10",
+        "Extracted 비싸요 (expensive) from context without being taught — first inference from context"
+      ],
+      "focus_next_session": [
+        "지하철 and 택시 — new transport words, will return in review queue",
+        "Speaking practice — still unpracticed",
+        "Transport theme: 어디예요? (where is...?) pattern"
+      ],
+      "notes": "Vocabulary flashcard drill (recognition/production/cloze mix). All due items perfect 10/10 including revenge on ㅐ/ㅔ. Two new words missed on first exposure (expected): 지하철, 택시 — staged with low initial quality for fast re-review. Bonus word 비싸요 inferred from context.",
+      "achievements_earned": [],
+      "streak_day": 5
     }
   ],
   "milestones": [
@@ -247,6 +281,11 @@
       "date": "2026-11-12",
       "milestone": "First café transaction dialogue (커피 얼마예요? 네, 주세요)",
       "session_id": "session-006"
+    },
+    {
+      "date": "2026-11-13",
+      "milestone": "First word inferred from context without being taught (비싸요)",
+      "session_id": "session-007"
     }
   ]
 }
