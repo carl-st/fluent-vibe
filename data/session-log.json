@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 7
+    "total_sessions": 8
   },
   "sessions": [
     {
@@ -254,6 +254,41 @@
       "notes": "Vocabulary flashcard drill (recognition/production/cloze mix). All due items perfect 10/10 including revenge on ㅐ/ㅔ. Two new words missed on first exposure (expected): 지하철, 택시 — staged with low initial quality for fast re-review. Bonus word 비싸요 inferred from context.",
       "achievements_earned": [],
       "streak_day": 5
+    },
+    {
+      "session_id": "session-008",
+      "date": "2026-11-15",
+      "duration_minutes": 15,
+      "skills_practiced": [
+        "speaking"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 8,
+      "accuracy": 0.75,
+      "score_breakdown": {
+        "speaking": 0.75
+      },
+      "topics_covered": [
+        "self-introduction",
+        "daily routine",
+        "hobbies",
+        "restaurant role-play",
+        "weather",
+        "directions",
+        "weekend plans"
+      ],
+      "breakthroughs": [
+        "First speaking session completed — 85% overall accuracy",
+        "Restaurant phrase 밥이랑 물 주세요 recalled perfectly from session-003"
+      ],
+      "focus_next_session": [
+        "Verb conjugations: 먹다/막다, 내리다 present forms",
+        "Particles: -에 (destination) vs -는 (topic)",
+        "Copula -이에요/-예요 after consonant/vowel nouns"
+      ],
+      "notes": "First /fluent-speaking session via /fluent-learn option 2. 8 questions, 68/80 (85%). Strong recall on restaurant phrase. Main errors: verb confusion (먹다/막다), particle -에/-는, copula forms. Speaking confidence building well.",
+      "achievements_earned": [],
+      "streak_day": 1
     }
   ],
   "milestones": [

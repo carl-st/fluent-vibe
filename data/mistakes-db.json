@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-13",
-    "total_patterns_tracked": 10,
+    "last_updated": "2026-11-15",
+    "total_patterns_tracked": 14,
     "language": "Korean"
   },
   "error_patterns": {
@@ -243,6 +243,98 @@
           "correct": "네, 주세요",
           "context": "ㅐ/ㅔ confusion (내→네 'my'→'yes') and ㅔ/ㅏ in 세요→사요",
           "date": "2026-11-12"
+        }
+      ],
+      "notes": ""
+    },
+    "verb_mek_vs_mak": {
+      "category": "vocabulary",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-15",
+      "last_occurred": "2026-11-15",
+      "next_review": "2026-11-16",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "밥을 막에요",
+          "correct": "밥을 먹어요",
+          "context": "eating verb conjugation — 먹다 not 막다",
+          "date": "2026-11-15"
+        }
+      ],
+      "notes": ""
+    },
+    "particle_e_vs_neun_destination": {
+      "category": "grammar",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-15",
+      "last_occurred": "2026-11-15",
+      "next_review": "2026-11-16",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "식당는 가요",
+          "correct": "식당에 가요",
+          "context": "destination particle -에 after consonant nouns",
+          "date": "2026-11-15"
+        }
+      ],
+      "notes": ""
+    },
+    "verb_naerida_conjugation": {
+      "category": "grammar",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-15",
+      "last_occurred": "2026-11-15",
+      "next_review": "2026-11-16",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "비가 내린에요",
+          "correct": "비가 내려요",
+          "context": "present polite of 내리다 is 내려요",
+          "date": "2026-11-15"
+        }
+      ],
+      "notes": ""
+    },
+    "copula_ieyo_after_consonant": {
+      "category": "grammar",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-15",
+      "last_occurred": "2026-11-15",
+      "next_review": "2026-11-16",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "폴란드 사라미에요",
+          "correct": "폴란드 사람이에요",
+          "context": "noun 사람 + copula -이에요",
+          "date": "2026-11-15"
         }
       ],
       "notes": ""
