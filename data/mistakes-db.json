@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-15",
-    "total_patterns_tracked": 14,
+    "last_updated": "2026-11-16",
+    "total_patterns_tracked": 17,
     "language": "Korean"
   },
   "error_patterns": {
@@ -85,14 +85,14 @@
       "subcategory": "",
       "description": "",
       "severity": "minor",
-      "frequency": 2,
+      "frequency": 3,
       "mastery_level": 0,
       "difficulty_score": 0.5,
-      "last_seen": "2026-11-11",
-      "last_occurred": "2026-11-11",
-      "next_review": "2026-11-12",
+      "last_seen": "2026-11-16",
+      "last_occurred": "2026-11-16",
+      "next_review": "2026-11-17",
       "consecutive_correct": 0,
-      "consecutive_incorrect": 2,
+      "consecutive_incorrect": 3,
       "examples": [
         {
           "incorrect": "몰",
@@ -105,6 +105,12 @@
           "correct": "얼마예요",
           "context": "batchim ㄹ dropped and ㄹ/ㅁ batchim swapped in 얼마예요",
           "date": "2026-11-11"
+        },
+        {
+          "incorrect": "몰",
+          "correct": "물",
+          "context": "batchim ㄹ dropped in 물 — recurrence of session-002 pattern",
+          "date": "2026-11-16"
         }
       ],
       "notes": ""
@@ -335,6 +341,75 @@
           "correct": "폴란드 사람이에요",
           "context": "noun 사람 + copula -이에요",
           "date": "2026-11-15"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_vowel_e_vs_eo_confusion": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-16",
+      "last_occurred": "2026-11-16",
+      "next_review": "2026-11-17",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "주서요",
+          "correct": "주세요",
+          "context": "ㅔ vs ㅓ in 세요 — same vowel family as ㅐ/ㅔ issues",
+          "date": "2026-11-16"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_aspirate_k_vs_g": {
+      "category": "spelling",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-16",
+      "last_occurred": "2026-11-16",
+      "next_review": "2026-11-17",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "칼롤이에요",
+          "correct": "카롤이에요",
+          "context": "ㅋ (aspirated k) vs ㄱ (plain) in own name",
+          "date": "2026-11-16"
+        }
+      ],
+      "notes": ""
+    },
+    "currency_won_omission": {
+      "category": "grammar",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-16",
+      "last_occurred": "2026-11-16",
+      "next_review": "2026-11-17",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "삼천오백",
+          "correct": "삼천오백 원",
+          "context": "recurring omission of 원 in prices",
+          "date": "2026-11-16"
         }
       ],
       "notes": ""

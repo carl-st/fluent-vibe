@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 8
+    "total_sessions": 9
   },
   "sessions": [
     {
@@ -289,6 +289,48 @@
       "notes": "First /fluent-speaking session via /fluent-learn option 2. 8 questions, 68/80 (85%). Strong recall on restaurant phrase. Main errors: verb confusion (먹다/막다), particle -에/-는, copula forms. Speaking confidence building well.",
       "achievements_earned": [],
       "streak_day": 1
+    },
+    {
+      "session_id": "session-009",
+      "date": "2026-11-16",
+      "duration_minutes": 17,
+      "skills_practiced": [
+        "vocabulary",
+        "writing",
+        "speaking"
+      ],
+      "command_used": "/fluent-learn",
+      "exercises_completed": 15,
+      "accuracy": 0.8,
+      "score_breakdown": {
+        "vocabulary": 0.917,
+        "writing": 0.333
+      },
+      "topics_covered": [
+        "spaced review (12 items)",
+        "먹다 vs 막다",
+        "destination particle -에",
+        "copula 이에요/예요",
+        "transport -로",
+        "daily routine",
+        "self-introduction"
+      ],
+      "breakthroughs": [
+        "All 12 due review items cleared, including Friday's new words (지하철, 택시) at 10/10",
+        "먹다/막다 fixed — 아침을 먹어요 correct after Sunday's slip",
+        "Destination particle -에 and copula 이에요 both correct",
+        "First self-introduction: 저는 카롤이에요",
+        "First daily routine description: 아침을 먹어요. 지하철로 학교에 가요"
+      ],
+      "focus_next_session": [
+        "ㅔ vs ㅓ vowel discrimination — new top priority (주세요 vs 주서요)",
+        "Batchim ㄹ in 물 — recurrence, watch closely",
+        "Transport word order: 지하철로 + destination + 가요",
+        "Speaking follow-up: answered a conversational question successfully"
+      ],
+      "notes": "Adaptive mix. Warm-up: 12/12 due items cleared. Sunday's three speaking patterns (먹다/막다, -에, 이에요) all fixed. New ㅔ/ㅓ vowel error in 주서요 — part of the persistent ㅐ/ㅔ/ㅓ vowel family. 물 batchim regression recurred. Name spelling 칼롤→카롤 (ㅋ/ㄱ). Two-sentence routine composed with minor word-order note. Conversational answer given successfully.",
+      "achievements_earned": [],
+      "streak_day": 2
     }
   ],
   "milestones": [
@@ -321,6 +363,16 @@
       "date": "2026-11-13",
       "milestone": "First word inferred from context without being taught (비싸요)",
       "session_id": "session-007"
+    },
+    {
+      "date": "2026-11-16",
+      "milestone": "First self-introduction in Korean (저는 카롤이에요)",
+      "session_id": "session-009"
+    },
+    {
+      "date": "2026-11-16",
+      "milestone": "First daily routine description (아침을 먹어요. 지하철로 학교에 가요)",
+      "session_id": "session-009"
     }
   ]
 }

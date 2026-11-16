@@ -1,26 +1,12 @@
 {
   "metadata": {
     "algorithm": "SM-2",
-    "last_updated": "2026-11-15",
-    "total_items_tracked": 37,
+    "last_updated": "2026-11-16",
+    "total_items_tracked": 42,
     "language": "Korean"
   },
   "review_queue": {
     "today": [
-      "vocab_eolmayeyo",
-      "vocab_bam",
-      "vocab_menyu",
-      "numeral_man",
-      "sino_number_ten_thousands",
-      "vocab_bang",
-      "vocab_man",
-      "hangeul_consonant_ch_vs_j",
-      "hangeul_vowel_e_a_confusion",
-      "vocab_jihacheol",
-      "vocab_taeksi",
-      "vocab_bissayo"
-    ],
-    "tomorrow": [
       "vocab_annyeonghaseyo",
       "vocab_gamsahamnida",
       "vocab_aniyo",
@@ -31,20 +17,39 @@
       "hangeul_vowel_ye_vs_yeo_vs_e",
       "hangeul_consonant_g_vs_n",
       "vocab_mul",
-      "verb_mek_vs_mak",
-      "particle_e_vs_neun_destination",
-      "verb_naerida_conjugation",
-      "copula_ieyo_after_consonant"
+      "verb_naerida_conjugation"
     ],
-    "this_week": [
+    "tomorrow": [
       "vocab_jeogiyo",
       "vocab_moreugesseoyo",
+      "vocab_bang",
+      "vocab_man",
+      "hangeul_consonant_ch_vs_j",
+      "hangeul_vowel_e_a_confusion",
+      "vocab_jihacheol",
+      "vocab_taeksi",
+      "vocab_bissayo",
+      "verb_mek_vs_mak",
+      "particle_e_vs_neun_destination",
+      "copula_ieyo_after_consonant",
+      "vocab_hakgyo",
+      "vocab_masyeoyo",
+      "hangeul_vowel_e_vs_eo_confusion",
+      "hangeul_aspirate_k_vs_g",
+      "currency_won_omission"
+    ],
+    "this_week": [
+      "vocab_eolmayeyo",
       "vocab_bap",
+      "vocab_bam",
+      "vocab_menyu",
       "vocab_igeo",
       "vocab_keopi",
       "vocab_won",
       "ending_juseyo_omission",
-      "hangeul_vowel_o_vs_u"
+      "hangeul_vowel_o_vs_u",
+      "numeral_man",
+      "sino_number_ten_thousands"
     ],
     "later": [
       "vocab_ne",
@@ -231,16 +236,16 @@
       "category": "travel",
       "difficulty": "A1",
       "created_date": "2026-11-08",
-      "due_date": "2026-11-14",
-      "interval_days": 1,
-      "repetitions": 1,
-      "easiness_factor": 2.48,
-      "consecutive_correct": 1,
+      "due_date": "2026-11-22",
+      "interval_days": 6,
+      "repetitions": 2,
+      "easiness_factor": 2.58,
+      "consecutive_correct": 2,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-13",
+      "last_reviewed": "2026-11-16",
       "last_quality": 5,
-      "mastery_level": 1,
-      "total_reviews": 4,
+      "mastery_level": 2,
+      "total_reviews": 5,
       "priority": "high",
       "review_history": [
         {
@@ -260,6 +265,11 @@
         },
         {
           "date": "2026-11-13",
+          "quality": 5,
+          "score": 0
+        },
+        {
+          "date": "2026-11-16",
           "quality": 5,
           "score": 0
         }
@@ -608,20 +618,25 @@
       "category": "essential_nouns",
       "difficulty": "A1",
       "created_date": "2026-11-09",
-      "due_date": "2026-11-13",
-      "interval_days": 1,
-      "repetitions": 1,
-      "easiness_factor": 2.6,
-      "consecutive_correct": 1,
+      "due_date": "2026-11-22",
+      "interval_days": 6,
+      "repetitions": 2,
+      "easiness_factor": 2.7,
+      "consecutive_correct": 2,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-12",
+      "last_reviewed": "2026-11-16",
       "last_quality": 5,
-      "mastery_level": 0,
-      "total_reviews": 1,
+      "mastery_level": 1,
+      "total_reviews": 2,
       "priority": "medium",
       "review_history": [
         {
           "date": "2026-11-12",
+          "quality": 5,
+          "score": 0
+        },
+        {
+          "date": "2026-11-16",
           "quality": 5,
           "score": 0
         }
@@ -635,20 +650,25 @@
       "category": "food",
       "difficulty": "A1",
       "created_date": "2026-11-09",
-      "due_date": "2026-11-13",
-      "interval_days": 1,
-      "repetitions": 1,
-      "easiness_factor": 2.6,
-      "consecutive_correct": 1,
+      "due_date": "2026-11-22",
+      "interval_days": 6,
+      "repetitions": 2,
+      "easiness_factor": 2.7,
+      "consecutive_correct": 2,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-12",
+      "last_reviewed": "2026-11-16",
       "last_quality": 5,
-      "mastery_level": 0,
-      "total_reviews": 1,
+      "mastery_level": 1,
+      "total_reviews": 2,
       "priority": "medium",
       "review_history": [
         {
           "date": "2026-11-12",
+          "quality": 5,
+          "score": 0
+        },
+        {
+          "date": "2026-11-16",
           "quality": 5,
           "score": 0
         }
@@ -859,20 +879,25 @@
       "category": "numbers",
       "difficulty": "A1",
       "created_date": "2026-11-11",
-      "due_date": "2026-11-14",
-      "interval_days": 1,
-      "repetitions": 1,
-      "easiness_factor": 2.6,
-      "consecutive_correct": 1,
+      "due_date": "2026-11-22",
+      "interval_days": 6,
+      "repetitions": 2,
+      "easiness_factor": 2.7,
+      "consecutive_correct": 2,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-13",
+      "last_reviewed": "2026-11-16",
       "last_quality": 5,
-      "mastery_level": 0,
-      "total_reviews": 1,
+      "mastery_level": 1,
+      "total_reviews": 2,
       "priority": "high",
       "review_history": [
         {
           "date": "2026-11-13",
+          "quality": 5,
+          "score": 0
+        },
+        {
+          "date": "2026-11-16",
           "quality": 5,
           "score": 0
         }
@@ -886,20 +911,25 @@
       "category": "vocabulary",
       "difficulty": "",
       "created_date": "2026-11-11",
-      "due_date": "2026-11-13",
-      "interval_days": 1,
-      "repetitions": 1,
+      "due_date": "2026-11-22",
+      "interval_days": 6,
+      "repetitions": 2,
       "easiness_factor": 2.5,
-      "consecutive_correct": 1,
+      "consecutive_correct": 2,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-12",
+      "last_reviewed": "2026-11-16",
       "last_quality": 4,
-      "mastery_level": 0,
-      "total_reviews": 1,
+      "mastery_level": 1,
+      "total_reviews": 2,
       "priority": "high",
       "review_history": [
         {
           "date": "2026-11-12",
+          "quality": 4,
+          "score": 0
+        },
+        {
+          "date": "2026-11-16",
           "quality": 4,
           "score": 0
         }
@@ -913,17 +943,24 @@
       "category": "essential_nouns",
       "difficulty": "A1",
       "created_date": "2026-11-12",
-      "due_date": "2026-11-13",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-12",
+      "last_reviewed": "2026-11-16",
       "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "medium"
+      "total_reviews": 1,
+      "priority": "medium",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "vocab_man": {
       "id": "vocab_man",
@@ -933,17 +970,24 @@
       "category": "numbers",
       "difficulty": "A1",
       "created_date": "2026-11-12",
-      "due_date": "2026-11-13",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-12",
+      "last_reviewed": "2026-11-16",
       "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "high"
+      "total_reviews": 1,
+      "priority": "high",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "hangeul_consonant_ch_vs_j": {
       "id": "hangeul_consonant_ch_vs_j",
@@ -953,17 +997,24 @@
       "category": "spelling",
       "difficulty": "",
       "created_date": "2026-11-12",
-      "due_date": "2026-11-13",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
-      "consecutive_incorrect": 1,
-      "last_reviewed": "2026-11-12",
-      "last_quality": 2,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
+      "consecutive_incorrect": 0,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "high"
+      "total_reviews": 1,
+      "priority": "high",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "hangeul_vowel_e_a_confusion": {
       "id": "hangeul_vowel_e_a_confusion",
@@ -973,21 +1024,26 @@
       "category": "spelling",
       "difficulty": "",
       "created_date": "2026-11-12",
-      "due_date": "2026-11-14",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 1,
-      "easiness_factor": 2.6,
-      "consecutive_correct": 1,
-      "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-13",
-      "last_quality": 5,
+      "repetitions": 0,
+      "easiness_factor": 2.28,
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 2,
       "mastery_level": 0,
-      "total_reviews": 1,
+      "total_reviews": 2,
       "priority": "high",
       "review_history": [
         {
           "date": "2026-11-13",
           "quality": 5,
+          "score": 0
+        },
+        {
+          "date": "2026-11-16",
+          "quality": 2,
           "score": 0
         }
       ]
@@ -1000,17 +1056,24 @@
       "category": "travel",
       "difficulty": "A1",
       "created_date": "2026-11-13",
-      "due_date": "2026-11-14",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-13",
-      "last_quality": 1,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "high"
+      "total_reviews": 1,
+      "priority": "high",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "vocab_taeksi": {
       "id": "vocab_taeksi",
@@ -1020,17 +1083,24 @@
       "category": "travel",
       "difficulty": "A1",
       "created_date": "2026-11-13",
-      "due_date": "2026-11-14",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-13",
-      "last_quality": 2,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "medium"
+      "total_reviews": 1,
+      "priority": "medium",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "vocab_bissayo": {
       "id": "vocab_bissayo",
@@ -1040,17 +1110,24 @@
       "category": "travel",
       "difficulty": "A1",
       "created_date": "2026-11-13",
-      "due_date": "2026-11-14",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
       "consecutive_incorrect": 0,
-      "last_reviewed": "2026-11-13",
-      "last_quality": 3,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "medium"
+      "total_reviews": 1,
+      "priority": "medium",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "verb_mek_vs_mak": {
       "id": "verb_mek_vs_mak",
@@ -1060,17 +1137,24 @@
       "category": "vocabulary",
       "difficulty": "",
       "created_date": "2026-11-15",
-      "due_date": "2026-11-16",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
-      "consecutive_incorrect": 1,
-      "last_reviewed": "2026-11-15",
-      "last_quality": 2,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
+      "consecutive_incorrect": 0,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "high"
+      "total_reviews": 1,
+      "priority": "high",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "particle_e_vs_neun_destination": {
       "id": "particle_e_vs_neun_destination",
@@ -1080,17 +1164,24 @@
       "category": "grammar",
       "difficulty": "",
       "created_date": "2026-11-15",
-      "due_date": "2026-11-16",
+      "due_date": "2026-11-17",
       "interval_days": 1,
-      "repetitions": 0,
-      "easiness_factor": 2.5,
-      "consecutive_correct": 0,
-      "consecutive_incorrect": 1,
-      "last_reviewed": "2026-11-15",
-      "last_quality": 2,
+      "repetitions": 1,
+      "easiness_factor": 2.6,
+      "consecutive_correct": 1,
+      "consecutive_incorrect": 0,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 5,
       "mastery_level": 0,
-      "total_reviews": 0,
-      "priority": "high"
+      "total_reviews": 1,
+      "priority": "high",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 5,
+          "score": 0
+        }
+      ]
     },
     "verb_naerida_conjugation": {
       "id": "verb_naerida_conjugation",
@@ -1120,13 +1211,120 @@
       "category": "grammar",
       "difficulty": "",
       "created_date": "2026-11-15",
-      "due_date": "2026-11-16",
+      "due_date": "2026-11-17",
+      "interval_days": 1,
+      "repetitions": 1,
+      "easiness_factor": 2.5,
+      "consecutive_correct": 1,
+      "consecutive_incorrect": 0,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 4,
+      "mastery_level": 0,
+      "total_reviews": 1,
+      "priority": "high",
+      "review_history": [
+        {
+          "date": "2026-11-16",
+          "quality": 4,
+          "score": 0
+        }
+      ]
+    },
+    "vocab_hakgyo": {
+      "id": "vocab_hakgyo",
+      "type": "vocabulary",
+      "content": "학교",
+      "answer": "school",
+      "category": "essential_nouns",
+      "difficulty": "A1",
+      "created_date": "2026-11-16",
+      "due_date": "2026-11-17",
+      "interval_days": 1,
+      "repetitions": 0,
+      "easiness_factor": 2.5,
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 0,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 5,
+      "mastery_level": 0,
+      "total_reviews": 0,
+      "priority": "high"
+    },
+    "vocab_masyeoyo": {
+      "id": "vocab_masyeoyo",
+      "type": "vocabulary",
+      "content": "마셔요",
+      "answer": "I drink / (something) is drunk",
+      "category": "food",
+      "difficulty": "A1",
+      "created_date": "2026-11-16",
+      "due_date": "2026-11-17",
+      "interval_days": 1,
+      "repetitions": 0,
+      "easiness_factor": 2.5,
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 0,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 2,
+      "mastery_level": 0,
+      "total_reviews": 0,
+      "priority": "medium"
+    },
+    "hangeul_vowel_e_vs_eo_confusion": {
+      "id": "hangeul_vowel_e_vs_eo_confusion",
+      "type": "error_pattern",
+      "content": "주서요",
+      "answer": "주세요",
+      "category": "spelling",
+      "difficulty": "",
+      "created_date": "2026-11-16",
+      "due_date": "2026-11-17",
       "interval_days": 1,
       "repetitions": 0,
       "easiness_factor": 2.5,
       "consecutive_correct": 0,
       "consecutive_incorrect": 1,
-      "last_reviewed": "2026-11-15",
+      "last_reviewed": "2026-11-16",
+      "last_quality": 2,
+      "mastery_level": 0,
+      "total_reviews": 0,
+      "priority": "high"
+    },
+    "hangeul_aspirate_k_vs_g": {
+      "id": "hangeul_aspirate_k_vs_g",
+      "type": "error_pattern",
+      "content": "칼롤이에요",
+      "answer": "카롤이에요",
+      "category": "spelling",
+      "difficulty": "",
+      "created_date": "2026-11-16",
+      "due_date": "2026-11-17",
+      "interval_days": 1,
+      "repetitions": 0,
+      "easiness_factor": 2.5,
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "last_reviewed": "2026-11-16",
+      "last_quality": 2,
+      "mastery_level": 0,
+      "total_reviews": 0,
+      "priority": "high"
+    },
+    "currency_won_omission": {
+      "id": "currency_won_omission",
+      "type": "error_pattern",
+      "content": "삼천오백",
+      "answer": "삼천오백 원",
+      "category": "grammar",
+      "difficulty": "",
+      "created_date": "2026-11-16",
+      "due_date": "2026-11-17",
+      "interval_days": 1,
+      "repetitions": 0,
+      "easiness_factor": 2.5,
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "last_reviewed": "2026-11-16",
       "last_quality": 2,
       "mastery_level": 0,
       "total_reviews": 0,
