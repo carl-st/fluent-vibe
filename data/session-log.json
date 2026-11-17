@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 9
+    "total_sessions": 10
   },
   "sessions": [
     {
@@ -331,6 +331,39 @@
       "notes": "Adaptive mix. Warm-up: 12/12 due items cleared. Sunday's three speaking patterns (먹다/막다, -에, 이에요) all fixed. New ㅔ/ㅓ vowel error in 주서요 — part of the persistent ㅐ/ㅔ/ㅓ vowel family. 물 batchim regression recurred. Name spelling 칼롤→카롤 (ㅋ/ㄱ). Two-sentence routine composed with minor word-order note. Conversational answer given successfully.",
       "achievements_earned": [],
       "streak_day": 2
+    },
+    {
+      "session_id": "session-010",
+      "date": "2026-11-17",
+      "duration_minutes": 12,
+      "skills_practiced": [
+        "vocabulary"
+      ],
+      "command_used": "/fluent-vocab",
+      "exercises_completed": 10,
+      "accuracy": 0.7,
+      "score_breakdown": {
+        "vocabulary": 0.7
+      },
+      "topics_covered": [
+        "spaced review (10 cards)",
+        "transport verbs (내리다)",
+        "ㅔ/ㅓ vowel discrimination",
+        "word confusion disambiguation"
+      ],
+      "breakthroughs": [
+        "내려요 acquired with instant recall — taught and reproduced within one card",
+        "물 batchim regression reversed — correct ㄹ on first attempt",
+        "감사합니다 and 아니요 both perfect — the two oldest weak patterns fully conquered"
+      ],
+      "focus_next_session": [
+        "주세요 — ㅔ/ㅓ vowel: retest daily until automatic (2 misses in 2 sessions)",
+        "화장실 vs 지하철 — word confusion",
+        "내려요 in context: 지하철에서 내려요"
+      ],
+      "notes": "Vocabulary drill (recognition/production/cloze mix). Two misses: 주서요 (ㅔ/ㅓ regression, second consecutive miss — flagged hard) and 화장실 confused with 지하철 from context. Both fixed via retype. 내려요 was unknown, taught, then recalled perfectly one card later. All other cards 10/10.",
+      "achievements_earned": [],
+      "streak_day": 3
     }
   ],
   "milestones": [

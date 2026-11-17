@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-16",
-    "total_patterns_tracked": 17,
+    "last_updated": "2026-11-17",
+    "total_patterns_tracked": 18,
     "language": "Korean"
   },
   "error_patterns": {
@@ -350,20 +350,26 @@
       "subcategory": "",
       "description": "",
       "severity": "moderate",
-      "frequency": 1,
+      "frequency": 2,
       "mastery_level": 0,
       "difficulty_score": 0.5,
-      "last_seen": "2026-11-16",
-      "last_occurred": "2026-11-16",
-      "next_review": "2026-11-17",
+      "last_seen": "2026-11-17",
+      "last_occurred": "2026-11-17",
+      "next_review": "2026-11-18",
       "consecutive_correct": 0,
-      "consecutive_incorrect": 1,
+      "consecutive_incorrect": 2,
       "examples": [
         {
           "incorrect": "주서요",
           "correct": "주세요",
           "context": "ㅔ vs ㅓ in 세요 — same vowel family as ㅐ/ㅔ issues",
           "date": "2026-11-16"
+        },
+        {
+          "incorrect": "주서요",
+          "correct": "주세요",
+          "context": "ㅔ vs ㅓ in 세요 — second consecutive session miss, now top priority",
+          "date": "2026-11-17"
         }
       ],
       "notes": ""
@@ -410,6 +416,29 @@
           "correct": "삼천오백 원",
           "context": "recurring omission of 원 in prices",
           "date": "2026-11-16"
+        }
+      ],
+      "notes": ""
+    },
+    "word_confusion_hwajangsil_jihacheol": {
+      "category": "vocabulary",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-17",
+      "last_occurred": "2026-11-17",
+      "next_review": "2026-11-18",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "where is the subway?",
+          "correct": "bathroom (화장실)",
+          "context": "confused 화장실 (bathroom) with 지하철 (subway) in context-heavy sentence",
+          "date": "2026-11-17"
         }
       ],
       "notes": ""
