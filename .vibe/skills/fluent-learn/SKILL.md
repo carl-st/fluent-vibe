@@ -157,6 +157,22 @@ Then use the `fluent-db-updater` skill:
 
 Save exchange to `/results/fluent-learn-session-{NNN}.md`.
 
+### 10. Build the personal dictionary
+
+After every session, regenerate `/results/dictionary.md` — a single file listing every vocabulary word the learner has encountered, pulled from `spaced-repetition.json` items where `type == "vocabulary"`. Sort by category, then by mastery level (descending). Include columns: Korean word, meaning, category, mastery (⭐), and next due date. This gives the learner one central place to browse all learned words.
+
+```markdown
+# 📓 {name}'s {target_language} Dictionary
+
+_Last updated: {YYYY-MM-DD} · {N} words total_
+
+## {Category}
+| Word | Meaning | Mastery | Next Review |
+|------|---------|---------|-------------|
+| 저기요 | excuse me | ⭐⭐☆☆☆ | 2026-11-20 |
+...
+```
+
 ## Examples
 
 ### Example 1 — greeting for an active learner
