@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2026-11-17",
-    "total_patterns_tracked": 18,
+    "last_updated": "2026-11-18",
+    "total_patterns_tracked": 21,
     "language": "Korean"
   },
   "error_patterns": {
@@ -439,6 +439,75 @@
           "correct": "bathroom (화장실)",
           "context": "confused 화장실 (bathroom) with 지하철 (subway) in context-heavy sentence",
           "date": "2026-11-17"
+        }
+      ],
+      "notes": ""
+    },
+    "hangeul_vowel_a_vs_i_confusion": {
+      "category": "vocabulary",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-18",
+      "last_occurred": "2026-11-18",
+      "next_review": "2026-11-19",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "지히철",
+          "correct": "지하철",
+          "context": "ㅏ vs ㅣ vowel discrimination in 지하철",
+          "date": "2026-11-18"
+        }
+      ],
+      "notes": ""
+    },
+    "verb_masyeoyo_conjugation": {
+      "category": "grammar",
+      "subcategory": "",
+      "description": "",
+      "severity": "moderate",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-18",
+      "last_occurred": "2026-11-18",
+      "next_review": "2026-11-19",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "마신여요",
+          "correct": "마셔요",
+          "context": "마시다 polite present conjugation — ㅣ→ㅕ change",
+          "date": "2026-11-18"
+        }
+      ],
+      "notes": ""
+    },
+    "vocab_moreugesseoyo_nuance": {
+      "category": "vocabulary",
+      "subcategory": "",
+      "description": "",
+      "severity": "minor",
+      "frequency": 1,
+      "mastery_level": 0,
+      "difficulty_score": 0.5,
+      "last_seen": "2026-11-18",
+      "last_occurred": "2026-11-18",
+      "next_review": "2026-11-19",
+      "consecutive_correct": 0,
+      "consecutive_incorrect": 1,
+      "examples": [
+        {
+          "incorrect": "I don't know",
+          "correct": "I don't understand",
+          "context": "모르겠어요 vs 몰라요 nuance",
+          "date": "2026-11-18"
         }
       ],
       "notes": ""

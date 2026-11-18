@@ -2,7 +2,7 @@
   "metadata": {
     "language": "Korean",
     "learner_name": "Karol",
-    "total_sessions": 10
+    "total_sessions": 11
   },
   "sessions": [
     {
@@ -364,6 +364,34 @@
       "notes": "Vocabulary drill (recognition/production/cloze mix). Two misses: 주서요 (ㅔ/ㅓ regression, second consecutive miss — flagged hard) and 화장실 confused with 지하철 from context. Both fixed via retype. 내려요 was unknown, taught, then recalled perfectly one card later. All other cards 10/10.",
       "achievements_earned": [],
       "streak_day": 3
+    },
+    {
+      "session_id": "session-011",
+      "date": "2026-11-18",
+      "duration_minutes": 10,
+      "skills_practiced": [
+        "vocabulary"
+      ],
+      "command_used": "/fluent-vocab",
+      "exercises_completed": 9,
+      "accuracy": 0.667,
+      "score_breakdown": {
+        "vocabulary": 0.667
+      },
+      "topics_covered": [
+        "vocabulary review (9 cards)",
+        "recognition, production, cloze modes",
+        "travel and essential nouns"
+      ],
+      "breakthroughs": [],
+      "focus_next_session": [
+        "지하철 — ㅏ/ㅣ vowel discrimination",
+        "마셔요 — verb conjugation ㅣ→ㅕ",
+        "모르겠어요 vs 몰라요 nuance"
+      ],
+      "notes": "Vocabulary drill with recognition/production/cloze mix. 9 cards reviewed, 6 fully correct (67%). Errors: 지히철 for 지하철 (vowel), 마신여요 for 마셔요 (conjugation), 모르겠어요 nuance. Strong on loanwords (택시) and cognates.",
+      "achievements_earned": [],
+      "streak_day": 4
     }
   ],
   "milestones": [
